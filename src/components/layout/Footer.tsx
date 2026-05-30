@@ -11,21 +11,21 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 mb-20">
           <div className="sm:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.svg`} alt="" width={40} height={40} className="h-10 w-auto" />
-              <span className="font-bold text-2xl tracking-tight text-white">School<span className="font-light text-primary">Foundry</span></span>
-            </div>
+            <Link href="/" className="flex items-center gap-3 mb-8 group w-fit outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-8 focus-visible:ring-offset-[#030508] rounded-sm">
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.svg`} alt="" width={40} height={40} className="h-10 w-auto transition-transform duration-500 group-hover:scale-110" />
+              <span className="font-bold text-2xl tracking-tight text-white">School<span className="font-light text-primary group-hover:text-primary/80 transition-colors">Foundry</span></span>
+            </Link>
             <p className="text-white/40 leading-relaxed mb-8 max-sm text-base">
               Helping schools ditch the paperwork and run smoother. Built right here in Zambia, for schools that actually need tools that work.
             </p>
             <div className="flex flex-col gap-4 text-sm font-medium">
-              <a href="mailto:info@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300">
-                <div className="p-2 rounded-lg bg-white/5">
+              <a href="mailto:info@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors group-hover:bg-white/10">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
                 info@jiggabyte.co.zm
               </a>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 text-white/40">
                 <div className="p-2 rounded-lg bg-white/5">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                 { label: 'Work With Us', href: '/work-with-us' },
                 { label: 'Request Demo', href: '/#contact' },
               ].map(({ label, href }) => (
-                <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group">
+                <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">
                   <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /> {label}
                 </Link>
               ))}
@@ -60,7 +60,7 @@ export default function Footer() {
                 { label: 'Legal & POPIA', href: '/legal', flag: '⚖️' },
                 { label: 'Documentation', href: '/docs', flag: '📖' },
               ].map(({ label, href, flag }) => (
-                <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group">
+                <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">
                   <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /> 
                   <span className="flex-1">{label}</span>
                   <span className="text-xs grayscale group-hover:grayscale-0 transition-all opacity-50 group-hover:opacity-100">{flag}</span>

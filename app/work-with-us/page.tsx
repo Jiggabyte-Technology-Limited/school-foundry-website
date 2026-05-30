@@ -53,13 +53,13 @@ export default function WorkWithUsPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-primary">opportunity.</span>
             </motion.h1>
             <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 font-medium leading-relaxed max-w-2xl mx-auto">
-              Hundreds of thousands of schools across Southern Africa still run on paper ledgers and hand-written receipts. We're building the tools to change that — and we need partners who share the mission.
+              Hundreds of thousands of schools across Southern Africa still run on paper ledgers and hand-written receipts. We are building the tools to change that, and we need partners who share the mission.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* ── The Numbers — Stats Grid ── */}
+      {/* ── The Numbers - Stats Grid ── */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-12">
@@ -68,7 +68,7 @@ export default function WorkWithUsPage() {
               Why this <span className="text-primary">matters now.</span>
             </h3>
             <p className="text-[15px] text-white/50 max-w-[600px] leading-[1.65]">
-              Education infrastructure in Sub-Saharan Africa is underfunded and overwhelmingly paper-based. These aren't abstract numbers — they represent real schools where bursars write receipts by hand, where student records are stored in filing cabinets, and where a single fire or flood can erase years of data.
+              Education infrastructure in Sub-Saharan Africa is underfunded and overwhelmingly paper-based. These numbers represent real schools where bursars write receipts by hand, where student records sit in filing cabinets, and where a single fire or flood can erase years of data.
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function WorkWithUsPage() {
         </div>
       </section>
 
-      {/* ── The Problem — Image + Text ── */}
+      {/* ── The Problem - Image + Text ── */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
@@ -122,13 +122,13 @@ export default function WorkWithUsPage() {
               </h3>
               <div className="space-y-4 text-[14px] text-white/55 leading-[1.75]">
                 <p>
-                  In Zambia alone, the Ministry of Education oversees <strong className="text-white/80">over 12,000 schools</strong> — most of which still track student records, fee payments, and attendance in hand-written ledgers.
+                  In Zambia alone, the Ministry of Education oversees <strong className="text-white/80">over 12,000 schools</strong> - most of which still track student records, fee payments, and attendance in hand-written ledgers.
                 </p>
                 <p>
                   Zimbabwe faces similar challenges with <strong className="text-white/80">over 9,500 schools</strong> operating without standardized digital record-keeping. District offices rely on physical file submissions from individual schools, creating weeks-long delays in reporting.
                 </p>
                 <p>
-                  <a href="https://thedocs.worldbank.org/en/doc/70f42d39bab0a849b36b2de4208a35e1-0140022024/original/EFW2023-Africa-edition.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/20 hover:decoration-white/50 transition-colors">Government spending on education</a> across Africa remains at <strong className="text-white/80">just 3.7% of GDP</strong> — below the recommended 4% benchmark. Aid to education in Sub-Saharan Africa <strong className="text-white/80">fell 23%</strong> from 2020 to 2021.
+                  <a href="https://thedocs.worldbank.org/en/doc/70f42d39bab0a849b36b2de4208a35e1-0140022024/original/EFW2023-Africa-edition.pdf" target="_blank" rel="noopener noreferrer" className="underline decoration-white/20 hover:decoration-white/50 transition-colors">Government spending on education</a> across Africa remains at <strong className="text-white/80">just 3.7% of GDP</strong> - below the recommended 4% benchmark. Aid to education in Sub-Saharan Africa <strong className="text-white/80">fell 23%</strong> from 2020 to 2021.
                 </p>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function WorkWithUsPage() {
         </div>
       </section>
 
-      {/* ── How Partners Help — Solution Section ── */}
+      {/* ── How Partners Help - Solution Section ── */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-12 text-center max-w-2xl mx-auto">
@@ -146,7 +146,7 @@ export default function WorkWithUsPage() {
               Every partner <span className="text-primary">unlocks a school.</span>
             </h3>
             <p className="text-[15px] text-white/50 leading-[1.65]">
-              A full SchoolFoundry deployment — printer, paper, and software — starts at $500 ($400 without the printer) and digitizes an entire school permanently. Here's how different partners make it happen.
+              A full SchoolFoundry setup - printer, paper, and software - starts at $500 ($400 without the printer) and gives one school a permanent digital system. Here is how different partners make it happen.
             </p>
           </div>
 
@@ -159,11 +159,11 @@ export default function WorkWithUsPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Donors & Sponsors</p>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                Fund the digitization of schools that can't afford it themselves. A $500 sponsorship covers the full hardware + software bundle for one school — permanently. $400 if the school already has a printer.
+                Fund the digital setup for schools that cannot afford it themselves. A $500 sponsorship covers the full bundle for one school. $400 if the school already has a printer.
               </p>
               <div className="flex items-center gap-2 text-[12px] text-primary font-bold">
                 <School className="w-3.5 h-3.5" />
-                <span>$500 = 1 school digitized</span>
+                <span>$500 = 1 school set up</span>
               </div>
             </div>
 
@@ -174,7 +174,7 @@ export default function WorkWithUsPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">NGOs & Development Agencies</p>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                Plug SchoolFoundry into your existing education programs. We provide the tech; you provide the reach. Deployments include training and measurable impact data for your reporting.
+                Use SchoolFoundry in your existing education programs. We provide the system, and you provide the reach. Deployments include training and clear impact reporting.
               </p>
               <div className="flex items-center gap-2 text-[12px] text-primary font-bold">
                 <BarChart3 className="w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export default function WorkWithUsPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Grant Funding</p>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                We target grants to cover deployment costs for disadvantaged schools — schools that have the infrastructure (a PC, electricity) but not the funds to digitize. If you manage an education or tech grant program, let's talk.
+                We target grants to cover setup costs for disadvantaged schools - schools that have the equipment but not the funds to move away from paper. If you manage an education or technology grant program, let's talk.
               </p>
               <div className="flex items-center gap-2 text-[12px] text-primary font-bold">
                 <Globe className="w-3.5 h-3.5" />
@@ -204,7 +204,7 @@ export default function WorkWithUsPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Government & Public Sector</p>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                Deploy SchoolFoundry at district or national scale to bring real-time visibility into school operations. Our offline-first architecture means it works in rural areas where cloud-only solutions fail — reaching all 12,000+ schools in Zambia or 9,500+ in Zimbabwe.
+                Deploy SchoolFoundry at district or national scale to bring clear visibility into school operations. It works in rural areas where internet is unreliable, making it suitable for large-scale rollouts.
               </p>
               <div className="flex items-center gap-2 text-[12px] text-primary font-bold">
                 <School className="w-3.5 h-3.5" />
@@ -219,11 +219,11 @@ export default function WorkWithUsPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Investors</p>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                African EdTech attracted over $200M in funding between 2019–2023 — but most targets urban, internet-connected markets. SchoolFoundry serves the offline majority. Impact-driven, sustainable, and built on real demand.
+                African EdTech attracted over $200M in funding between 2019 and 2023, but most of it focused on urban, internet-connected markets. SchoolFoundry serves the offline majority. Built on real demand, not hype.
               </p>
               <div className="flex items-center gap-2 text-[12px] text-primary font-bold">
                 <TrendingUp className="w-3.5 h-3.5" />
-                <span>$200M+ invested in African EdTech (2019–2023)</span>
+                <span>$200M+ invested in African EdTech (2019 to 2023)</span>
               </div>
             </div>
 
@@ -231,21 +231,21 @@ export default function WorkWithUsPage() {
         </div>
       </section>
 
-      {/* ── What $500 Buys — Impact Visual ── */}
+      {/* ── What $500 Buys - Impact Visual ── */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Left — the bundle image */}
+            {/* Left - the bundle image */}
             <div className="bg-[#0B0D13] overflow-hidden">
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/offline-bundle.jpg`}
-                alt="SchoolFoundry deployment bundle — what $500 buys"
+                alt="SchoolFoundry deployment bundle - what $500 buys"
                 className="w-full h-full object-cover min-h-[300px]"
               />
             </div>
 
-            {/* Right — impact breakdown */}
+            {/* Right - impact breakdown */}
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center cursor-default">
               <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-4">Impact per dollar</p>
               <h3 className="text-[24px] sm:text-[28px] font-black text-white leading-[1.15] mb-2 tracking-tight">
@@ -254,9 +254,9 @@ export default function WorkWithUsPage() {
               <p className="text-[13px] text-white/35 mb-6">$400 if the school already has a printer</p>
               <div className="space-y-5">
                 {[
-                  { stat: '1', desc: 'thermal receipt printer — no ink, ever' },
+                  { stat: '1', desc: 'thermal receipt printer - no ink, ever' },
                   { stat: '10', desc: 'starter paper rolls for Day 1' },
-                  { stat: '1', desc: 'lifetime software license — no monthly fees' },
+                  { stat: '1', desc: 'lifetime software license - no monthly fees' },
                   { stat: '∞', desc: 'students tracked, receipts printed, reports generated' },
                   { stat: '2s', desc: 'to print a professional receipt' },
                   { stat: '0', desc: 'internet required to operate' },
@@ -285,32 +285,32 @@ export default function WorkWithUsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Left — why partner */}
+            {/* Left - why partner */}
             <div className="bg-[#07090E] p-7 sm:p-10 cursor-default">
               <p className="text-[15px] text-white/60 leading-[1.8] mb-6">
-                Ministries of Education across Zambia, Zimbabwe, and the wider region face the same challenge: thousands of schools still run on paper-based systems with no visibility into enrolment numbers, fee collection, or academic performance at a district or national level.
+                Ministries of Education across Zambia, Zimbabwe, and the wider region face the same challenge: thousands of schools still run on paper-based systems with no clear view of student numbers, fee collection, or academic performance across districts or countries.
               </p>
               <p className="text-[15px] text-white/60 leading-[1.8] mb-6">
                 <a href="https://thedocs.worldbank.org/en/doc/70f42d39bab0a849b36b2de4208a35e1-0140022024/original/EFW2023-Africa-edition.pdf" target="_blank" rel="noopener noreferrer" className="underline">UNESCO estimates</a> that <strong className="text-white/80">median annual education spending per capita in Africa has stagnated at around $100</strong> for the past decade. SchoolFoundry's one-time deployment cost of $500 per school ($400 without the printer) is designed to fit within these constrained budgets.
               </p>
               <p className="text-[15px] text-white/60 leading-[1.8]">
-                We're ready to work with your department to pilot, customize, and roll out SchoolFoundry as part of your national education digitization strategy.
+                We're ready to work with your department to pilot, adapt, and roll out SchoolFoundry as part of your national school improvement plan.
               </p>
             </div>
 
-            {/* Right — what we offer */}
+            {/* Right - what we offer */}
             <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col justify-center cursor-default">
               <p className="font-bold text-[15px] text-white mb-6">What we bring to the table:</p>
               <div className="space-y-4">
                 {[
                   'Offline-first system that works in rural and urban schools alike',
-                  'Real-time analytics dashboard for district and national oversight',
+                  'Simple overview for district and national oversight',
                   'Secure, locally-hosted data with full audit trails',
                   'Mobile money payment integration for transparent fee collection',
                   'WhatsApp-based parent communication at zero cost to parents',
                   'Custom deployment packages for government-funded rollouts',
                   'Training and onboarding programs for school administrators',
-                  'Scalable architecture — from 10 schools to 10,000',
+                  'Built to grow from 10 schools to 10,000',
                 ].map((point, idx) => (
                   <div key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -336,7 +336,7 @@ export default function WorkWithUsPage() {
                 <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
               </div>
               <p className="text-[15px] text-white/50 leading-[1.7] mb-6">
-                Whether you're a school looking to digitize, a donor wanting to sponsor a school, an NGO running education programs, or a government ministry planning national rollouts — we want to hear from you.
+                Whether you're a school looking to move away from paper, a donor wanting to sponsor a school, an NGO running education programs, or a government ministry planning national rollouts, we want to hear from you.
               </p>
               <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/30">
                 Lusaka, Zambia · Built for Southern Africa

@@ -112,3 +112,16 @@
   50% { transform: translateY(-5px); }
   100% { transform: translateY(0px); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-ping {
+    display: none;
+  }
+}

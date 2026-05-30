@@ -227,7 +227,7 @@ export default function ZambiaCampaignPage() {
                 <p className="text-white font-mono font-black text-xl">1,611 Schools</p>
               </div>
               <div className="pt-6">
-                <p className="text-sm text-primary font-bold italic">"Administrative digitization is no longer a luxury, but a requirement for regional excellence."</p>
+                <p className="text-sm text-primary font-bold italic">"Clear school records are now essential for strong regional education."</p>
               </div>
             </div>
           </motion.div>
@@ -248,7 +248,7 @@ export default function ZambiaCampaignPage() {
             <div className="w-4 bg-[#EF7D00]" />
           </div>
 
-          <h3 className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tighter text-balance">Ready to digitize your Zambian school?</h3>
+              <h3 className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tighter text-balance">Ready to move your Zambian school away from paper?</h3>
           <p className="text-xl text-white/40 max-w-2xl mx-auto mb-12 font-medium">
             Join the 2025 Digital Transformation wave. Whether you need a local thermal printer bundle or a cloud-based SMS, we have the Zambian solution.
           </p>

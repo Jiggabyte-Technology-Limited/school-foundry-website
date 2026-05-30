@@ -46,7 +46,7 @@ export default function OfflinePage() {
             <motion.div initial="hidden" animate="visible" variants={STAGGER}>
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 mb-8 font-mono text-[10px] uppercase tracking-widest">
                 <WifiOff className="w-3 h-3" />
-                Offline Bundle
+                Offline Version
               </motion.div>
 
               <motion.h1 variants={FADE_UP} className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-6 tracking-tight leading-[0.95]">
@@ -55,7 +55,7 @@ export default function OfflinePage() {
               </motion.h1>
 
               <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 mb-10 max-w-xl leading-relaxed font-medium">
-                Built for schools where the internet likes to take holidays. SchoolFoundry Offline is a standalone powerhouse that runs entirely on your PC — no cloud, no connectivity, no compromises.
+                Built for schools that need a dependable system on the office computer. SchoolFoundry Offline keeps working when the internet is unavailable, so your team can record fees, print receipts, and manage student records without interruption.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-4">
@@ -83,7 +83,7 @@ export default function OfflinePage() {
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/offline-bundle.jpg`}
-                alt="SchoolFoundry Offline Bundle — laptop, receipt printer, and paper rolls"
+                alt="SchoolFoundry Offline Version, laptop, receipt printer, and paper rolls"
                 className="w-full h-auto object-cover"
               />
             </motion.div>
@@ -92,7 +92,7 @@ export default function OfflinePage() {
         </div>
       </section>
 
-      {/* ── What You Get — The Bundle ───────────────────── */}
+      {/* ── What You Get - The Bundle ───────────────────── */}
       <section className="py-16 sm:py-24 bg-[#07090E]">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-12">
@@ -101,13 +101,13 @@ export default function OfflinePage() {
               The Deployment<br /><span className="text-primary">Bundle.</span>
             </h3>
             <p className="text-[15px] text-white/50 max-w-[480px] leading-[1.65]">
-              One purchase. Everything you need to digitize your school on Day 1.
+              One purchase. Everything you need to get started from day one.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Thermal Printer — wide */}
+            {/* Thermal Printer - wide */}
             <div className="sm:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
                 <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bundle-printer.jpg`} alt="High-Speed Thermal Printer" className="w-full h-full object-cover" />
@@ -118,7 +118,7 @@ export default function OfflinePage() {
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">High-Speed Thermal Printer</p>
                 <p className="text-[13px] text-white/50 leading-[1.6]">
-                  No ink required — ever. Built to handle your busiest enrollment days. Prints professional receipts in under <strong className="text-white/70">2 seconds</strong>.
+                  No ink required, ever. Built to handle your busiest registration days. Prints professional receipts in under <strong className="text-white/70">2 seconds</strong>.
                 </p>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function OfflinePage() {
               </div>
             </div>
 
-            {/* Software + License — wide */}
+            {/* Software + License - wide */}
             <div className="sm:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
                 <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/welcome-school-foundry.png`} alt="SchoolFoundry Software with Lifetime License" className="w-full h-full object-cover" />
@@ -150,7 +150,7 @@ export default function OfflinePage() {
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">SchoolFoundry Software + Lifetime License</p>
                 <p className="text-[13px] text-white/50 leading-[1.6]">
-                  Full school management system pre-installed and ready to go. Runs on any Windows PC — no special hardware required. One-time payment, no monthly fees. Includes student tracking, fee management, reporting, and receipt printing.
+                  Full school management system installed and ready to use on your office computer. One-time payment, no monthly fees. Includes learner tracking, fee management, reporting, and receipt printing.
                 </p>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function OfflinePage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Lifetime License</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                One-time payment. You own your data forever. No hidden monthly fees, no subscriptions.
+                One-time payment. You own your records forever. No hidden monthly fees, no subscriptions.
               </p>
             </div>
 
@@ -179,7 +179,7 @@ export default function OfflinePage() {
               Features that work<br /><span className="text-primary">without WiFi.</span>
             </h3>
             <p className="text-[15px] text-white/50 max-w-[480px] leading-[1.65]">
-              Every feature runs locally on your machine. No cloud dependency, no downtime when the network drops.
+              The offline version runs on your machine. No cloud dependency, and no downtime when the network drops.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function OfflinePage() {
                 <WifiOff className="w-[18px] h-[18px] text-emerald-500" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">100% Offline</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature runs locally — no cloud dependency, no downtime.</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature stays available locally.</p>
             </div>
 
             {/* Student Tracking */}
@@ -210,10 +210,10 @@ export default function OfflinePage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Finance & Payments</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">Generate invoices, track arrears, and generate <strong className="text-white/70">receipts for cash payments</strong> instantly.</p>
-              <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Limited — Cash Only</span>
+              <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Cash only</span>
             </div>
 
-            {/* Receipt Printing — wide */}
+            {/* Receipt Printing - wide */}
             <div className="sm:col-span-2 bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -221,14 +221,14 @@ export default function OfflinePage() {
                     <Zap className="w-[18px] h-[18px] text-primary" />
                   </div>
                   <p className="font-bold text-[15px] text-white mb-1">Lightning Fast Receipts</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Print professional thermal receipts in under 2 seconds. No ink, no cartridges — just fast, clean prints every time.</p>
+                  <p className="text-[13px] text-white/50 leading-[1.6]">Print professional thermal receipts in under 2 seconds. No ink, no cartridges, just fast, clean prints every time.</p>
                 </div>
                 <div>
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <FileText className="w-[18px] h-[18px] text-primary" />
                   </div>
                   <p className="font-bold text-[15px] text-white mb-1">Admissions & Enrollment</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Digital applications, automated approval workflows, and onboarding processes to manage new student intake.</p>
+                  <p className="text-[13px] text-white/50 leading-[1.6]">Simple applications and clear approvals to manage new student intake.</p>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function OfflinePage() {
               <p className="text-[13px] text-white/50 leading-[1.6]">Configurable roles and permissions. Your records never leave your school premises.</p>
             </div>
 
-            {/* Local Storage + Reporting — wide bottom */}
+            {/* Local Storage + Reporting - wide bottom */}
             <div className="sm:col-span-2 bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -250,14 +250,14 @@ export default function OfflinePage() {
                     <Database className="w-[18px] h-[18px] text-primary" />
                   </div>
                   <p className="font-bold text-[15px] text-white mb-1">Secure Local Storage</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">All data stays on your office PC — encrypted by default. Safe, private, and always accessible.</p>
+                  <p className="text-[13px] text-white/50 leading-[1.6]">All data stays on your office computer. Safe, private, and always accessible.</p>
                 </div>
                 <div>
                   <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <BarChart3 className="w-[18px] h-[18px] text-primary" />
                   </div>
                   <p className="font-bold text-[15px] text-white mb-1">Reporting & Analytics</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Get instant answers on collections, outstanding fees, and payment trends. Every decision backed by real-time data.</p>
+                  <p className="text-[13px] text-white/50 leading-[1.6]">Get quick answers on collections, outstanding fees, and payment trends. Every decision backed by clear numbers.</p>
                 </div>
               </div>
             </div>
@@ -275,13 +275,13 @@ export default function OfflinePage() {
         </div>
       </section>
 
-      {/* ── Why Offline? ────────────────────────────────── */}
+      {/* ── Why Offline- ────────────────────────────────── */}
       <section className="py-16 sm:py-24 bg-[#07090E]">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-12">
             <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">Built for reality</p>
             <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[520px] tracking-tight">
-              Why go<br /><span className="text-primary">offline?</span>
+              Why go<br /><span className="text-primary">offline-</span>
             </h3>
           </div>
 
@@ -299,7 +299,7 @@ export default function OfflinePage() {
 
             <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <p className="font-bold text-[15px] text-white mb-2">One-time cost</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">No monthly fees or subscriptions. Pay once and the system is yours forever. Budget-friendly for schools running on tight finances.</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">No monthly fees or subscriptions. Pay once and the system is yours forever. Built for schools with tight budgets.</p>
             </div>
 
             <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
@@ -316,11 +316,11 @@ export default function OfflinePage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Left — info */}
+            {/* Left - info */}
             <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col justify-center">
-              <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-4">Ready to go offline?</p>
+              <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-4">Ready to go offline-</p>
               <h3 className="text-[28px] sm:text-[34px] font-black text-white leading-[1.1] mb-4 tracking-tight">
-                Get your school<br /><span className="text-primary">digitized today.</span>
+                Get your school<br /><span className="text-primary">ready today.</span>
               </h3>
               <p className="text-[15px] text-white/50 leading-[1.65] mb-8">
                 No complicated tech talk, no pressure, and definitely no commitment. Let&apos;s chat about what your school needs.
@@ -328,10 +328,10 @@ export default function OfflinePage() {
 
               <div className="space-y-4">
                 {[
-                  'One-off payment — no monthly bills',
+                  'One-off payment, no monthly bills',
                   'Works completely offline',
                   'Includes printer + paper rolls',
-                  'Simple setup — no IT degree required',
+                  'Simple setup, no special training required',
                   'Friendly guides included',
                 ].map((point, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -342,10 +342,10 @@ export default function OfflinePage() {
               </div>
             </div>
 
-            {/* Right — action */}
+            {/* Right - action */}
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center items-center text-center">
               <Package className="w-12 h-12 text-primary mb-6" />
-              <h4 className="text-2xl font-bold text-white mb-3">The Offline Bundle</h4>
+              <h4 className="text-2xl font-bold text-white mb-3">The Offline Version</h4>
               <p className="text-[13px] text-white/50 leading-[1.6] mb-8 max-w-sm">
                 High-speed thermal printer, 10 starter paper rolls, lifetime software license, and full support to get you running.
               </p>

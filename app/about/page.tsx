@@ -76,11 +76,11 @@ export default function AboutPage() {
           <motion.div initial="hidden" animate="visible" variants={STAGGER} className="text-center max-w-3xl mx-auto">
             <motion.span variants={FADE_UP} className="text-primary font-mono text-[10px] font-bold uppercase tracking-[0.3em] mb-6 block">About SchoolFoundry</motion.span>
             <motion.h1 variants={FADE_UP} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-              Digitizing education<br />
+              Supporting schools<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">across Southern Africa.</span>
             </motion.h1>
             <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 font-medium leading-relaxed">
-              We build school management tools that work where others don't — offline, on low-cost hardware, and in the languages and payment systems communities actually use.
+              We build school management tools that work in the real world - with unreliable internet, limited budgets, and the tools schools already use every day.
             </motion.p>
 
             {/* Hero mini stats */}
@@ -130,7 +130,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[17px] text-white mb-3">Our Vision</p>
               <p className="text-[15px] text-white/50 leading-[1.7]">
-                Every school in Southern Africa — from capital cities to rural villages — runs on modern digital infrastructure. No paper ledgers, no lost records, no guesswork. Just clear, reliable systems that let educators focus on teaching and communities track every dollar invested in their children's future.
+                Every school in Southern Africa - from capital cities to rural villages - deserves clear, reliable systems. No paper ledgers, no lost records, no guesswork.
               </p>
             </motion.div>
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[17px] text-white mb-3">Our Mission</p>
               <p className="text-[15px] text-white/50 leading-[1.7]">
-                Build affordable, offline-first school management technology that any school can adopt — regardless of budget, connectivity, or technical expertise. We deliver tools that digitize finances, student records, and parent communication using the platforms and payment methods communities already trust: WhatsApp, EcoCash, Momo, and M-Pesa.
+                Build affordable school management technology that any school can adopt - regardless of budget, internet access, or staff training. We deliver tools that simplify fees, student records, and parent communication using the platforms and payment methods communities already trust: WhatsApp, EcoCash, Momo, and M-Pesa.
               </p>
             </motion.div>
 
@@ -207,7 +207,7 @@ export default function AboutPage() {
             >
               <img
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/file-cabinet.jpg`}
-                alt="Overflowing file cabinet — the paper-based system SchoolFoundry replaces"
+                alt="Overflowing file cabinet - the paper-based system SchoolFoundry replaces"
                 className="w-full h-full object-cover min-h-[300px] hover:scale-105 transition-transform duration-700"
               />
             </motion.div>
@@ -230,7 +230,7 @@ export default function AboutPage() {
                 That afternoon, the idea for SchoolFoundry was born: <strong className="text-white/80">a system that works with zero internet, prints real receipts, and is simple enough for anyone to use on day one.</strong>
               </motion.p>
               <motion.p variants={FADE_UP} className="text-[15px] text-white/60 leading-[1.8]">
-                We built the first version on a second-hand laptop, tested it with three schools in Lusaka, and haven't stopped building since. Every feature we add comes from real conversations with bursars, principals, and parents — not a product roadmap designed in a boardroom.
+                We built the first version with real school feedback and have kept improving it from those conversations. Every feature comes from bursars, principals, and parents.
               </motion.p>
             </motion.div>
 
@@ -272,7 +272,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Financial Transparency</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Every payment is recorded, every receipt is printed, and every balance is accurate. Parents can see exactly where their school fees go — building trust between schools and the communities they serve. No more missing records or unaccounted funds.
+                Every payment is recorded, every receipt is printed, and every balance is accurate. Parents can see exactly where their school fees go, which builds trust between schools and communities.
               </p>
             </motion.div>
 
@@ -283,7 +283,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Accessible Technology</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Our system runs on any Windows PC — no high-end hardware needed. The Offline Bundle works without internet. The Cloud Version works on phones and tablets. Technology that meets schools where they are.
+                Our system runs on any office computer. The offline version works without internet. The cloud version works on phones and tablets.
               </p>
             </motion.div>
 
@@ -294,7 +294,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Built on the Ground</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Every feature in SchoolFoundry comes from real conversations with bursars, principals, teachers, and parents in the region. We don't guess what schools need — we ask, we observe, and we build accordingly.
+                Every feature in SchoolFoundry comes from real conversations with bursars, principals, teachers, and parents in the region. We listen first, then build.
               </p>
             </motion.div>
 
@@ -305,7 +305,7 @@ export default function AboutPage() {
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Designed for the Region</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Multi-currency support, local payment gateways (EcoCash, Momo, M-Pesa), WhatsApp-native communication, and workflows that reflect how Southern African schools actually operate. We're not adapting a Western product — we're building from scratch for this market.
+                Multi-currency support, local payment methods, WhatsApp communication, and simple steps that match how Southern African schools actually work.
               </p>
             </motion.div>
 
@@ -313,7 +313,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── CTA — Work With Us ── */}
+      {/* ── CTA - Work With Us ── */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
@@ -330,7 +330,7 @@ export default function AboutPage() {
                 <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
               </div>
               <p className="text-[15px] text-white/50 leading-[1.7] mb-6">
-                We partner with donors, sponsors, NGOs, governments, and investors who share our mission to digitize education across Southern Africa.
+                We partner with donors, sponsors, NGOs, governments, and investors who want to improve school administration across Southern Africa.
               </p>
               <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/30">
                 Lusaka, Zambia · Built for Southern Africa
@@ -338,7 +338,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col items-center justify-center text-center">
-              <p className="font-bold text-[17px] text-white mb-3">Interested in partnering?</p>
+              <p className="font-bold text-[17px] text-white mb-3">Interested in partnering-</p>
               <p className="text-[13px] text-white/50 mb-8 max-w-sm leading-relaxed">
                 Learn how donors, NGOs, governments, and investors are helping us bring digital school management to every community.
               </p>
