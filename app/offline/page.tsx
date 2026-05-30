@@ -108,12 +108,12 @@ export default function OfflinePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
             {/* Thermal Printer - wide */}
-            <div className="sm:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors cursor-default">
+            <div className="sm:col-span-2 bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bundle-printer.jpg`} alt="High-Speed Thermal Printer" className="w-full h-full object-cover" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bundle-printer.jpg`} alt="High-Speed Thermal Printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-7">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Printer className="w-[18px] h-[18px] text-primary" />
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">High-Speed Thermal Printer</p>
@@ -124,28 +124,28 @@ export default function OfflinePage() {
             </div>
 
             {/* Paper Rolls */}
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors cursor-default">
+            <div className="bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bundle-paper.jpg`} alt="10 Thermal Paper Rolls" className="w-full h-full object-cover" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/bundle-paper.jpg`} alt="10 Thermal Paper Rolls" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-7">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Receipt className="w-[18px] h-[18px] text-primary" />
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">10 Starter Paper Rolls</p>
                 <p className="text-[13px] text-white/50 leading-[1.6]">
-                  Standard 80×80mm thermal rolls. Everything you need to start printing on Day 1.
+                  Standard 80mm thermal rolls. Everything you need to start printing on Day 1.
                 </p>
               </div>
             </div>
 
             {/* Software + License - wide */}
-            <div className="sm:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors cursor-default">
+            <div className="sm:col-span-2 bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/welcome-school-foundry.png`} alt="SchoolFoundry Software with Lifetime License" className="w-full h-full object-cover" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/welcome-school-foundry.png`} alt="SchoolFoundry Software with Lifetime License" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              <div className="p-7">
-                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Monitor className="w-[18px] h-[18px] text-primary" />
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">SchoolFoundry Software + Lifetime License</p>
@@ -156,8 +156,8 @@ export default function OfflinePage() {
             </div>
 
             {/* Lifetime License */}
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
+            <div className="bg-[#07090E] p-7 group-hover:bg-white/[0.03] transition-colors cursor-default">
+              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <CheckCircle className="w-[18px] h-[18px] text-emerald-500" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Lifetime License</p>
@@ -186,89 +186,103 @@ export default function OfflinePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
             {/* 100% Offline */}
-            <div className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
-                <WifiOff className="w-[18px] h-[18px] text-emerald-500" />
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <WifiOff className="w-[18px] h-[18px] text-emerald-500" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">100% Offline</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature stays available locally.</p>
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">100% Offline</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature stays available locally.</p>
             </div>
 
             {/* Student Tracking */}
-            <div className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Users className="w-[18px] h-[18px] text-primary" />
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-[18px] h-[18px] text-primary" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child. Track finances, print statements, manage fees and more.</p>
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child. Track finances, print statements, manage fees and more.</p>
             </div>
 
             {/* Finance & Payments */}
-            <div className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <CreditCard className="w-[18px] h-[18px] text-primary" />
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <CreditCard className="w-[18px] h-[18px] text-primary" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">Finance & Payments</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Generate invoices, track arrears, and generate <strong className="text-white/70">receipts for cash payments</strong> instantly.</p>
+                <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Cash only</span>
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Finance & Payments</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Generate invoices, track arrears, and generate <strong className="text-white/70">receipts for cash payments</strong> instantly.</p>
-              <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Cash only</span>
             </div>
 
             {/* Receipt Printing - wide */}
-            <div className="sm:col-span-2 bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Zap className="w-[18px] h-[18px] text-primary" />
+            <div className="sm:col-span-2 bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Zap className="w-[18px] h-[18px] text-primary" />
+                    </div>
+                    <p className="font-bold text-[15px] text-white mb-1">Lightning Fast Receipts</p>
+                    <p className="text-[13px] text-white/50 leading-[1.6]">Print professional thermal receipts in under 2 seconds. No ink, no cartridges, just fast, clean prints every time.</p>
                   </div>
-                  <p className="font-bold text-[15px] text-white mb-1">Lightning Fast Receipts</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Print professional thermal receipts in under 2 seconds. No ink, no cartridges, just fast, clean prints every time.</p>
-                </div>
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <FileText className="w-[18px] h-[18px] text-primary" />
+                  <div>
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <FileText className="w-[18px] h-[18px] text-primary" />
+                    </div>
+                    <p className="font-bold text-[15px] text-white mb-1">Admissions & Enrollment</p>
+                    <p className="text-[13px] text-white/50 leading-[1.6]">Simple applications and clear approvals to manage new student intake.</p>
                   </div>
-                  <p className="font-bold text-[15px] text-white mb-1">Admissions & Enrollment</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Simple applications and clear approvals to manage new student intake.</p>
                 </div>
               </div>
             </div>
 
             {/* Security */}
-            <div className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Shield className="w-[18px] h-[18px] text-primary" />
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Shield className="w-[18px] h-[18px] text-primary" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">Security & User Management</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Configurable roles and permissions. Your records never leave your school premises.</p>
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Security & User Management</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Configurable roles and permissions. Your records never leave your school premises.</p>
             </div>
 
             {/* Local Storage + Reporting - wide bottom */}
-            <div className="sm:col-span-2 bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Database className="w-[18px] h-[18px] text-primary" />
+            <div className="sm:col-span-2 bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <Database className="w-[18px] h-[18px] text-primary" />
+                    </div>
+                    <p className="font-bold text-[15px] text-white mb-1">Secure Local Storage</p>
+                    <p className="text-[13px] text-white/50 leading-[1.6]">All data stays on your office computer. Safe, private, and always accessible.</p>
                   </div>
-                  <p className="font-bold text-[15px] text-white mb-1">Secure Local Storage</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">All data stays on your office computer. Safe, private, and always accessible.</p>
-                </div>
-                <div>
-                  <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <BarChart3 className="w-[18px] h-[18px] text-primary" />
+                  <div>
+                    <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <BarChart3 className="w-[18px] h-[18px] text-primary" />
+                    </div>
+                    <p className="font-bold text-[15px] text-white mb-1">Reporting & Analytics</p>
+                    <p className="text-[13px] text-white/50 leading-[1.6]">Get quick answers on collections, outstanding fees, and payment trends. Every decision backed by clear numbers.</p>
                   </div>
-                  <p className="font-bold text-[15px] text-white mb-1">Reporting & Analytics</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Get quick answers on collections, outstanding fees, and payment trends. Every decision backed by clear numbers.</p>
                 </div>
               </div>
             </div>
 
             {/* Multi-Currency */}
-            <div className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <Banknote className="w-[18px] h-[18px] text-primary" />
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Banknote className="w-[18px] h-[18px] text-primary" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">Multi-Currency Support</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Built for Southern Africa. USD, ZMW, and ZWG support comes standard.</p>
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Multi-Currency Support</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Built for Southern Africa. USD, ZMW, and ZWG support comes standard.</p>
             </div>
 
           </div>
@@ -287,24 +301,32 @@ export default function OfflinePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <p className="font-bold text-[15px] text-white mb-2">No internet required</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Many Southern African schools operate in areas with unreliable or no internet. SchoolFoundry Offline works perfectly in those conditions.</p>
+            <div className="bg-[#07090E] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <p className="font-bold text-[15px] text-white mb-2">No internet required</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Many Southern African schools operate in areas with unreliable or no internet. SchoolFoundry Offline works perfectly in those conditions.</p>
+              </div>
             </div>
 
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <p className="font-bold text-[15px] text-white mb-2">Total data privacy</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Your school&apos;s financial and student data never leaves your premises. No third-party servers, no data mining, no risk.</p>
+            <div className="bg-[#07090E] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <p className="font-bold text-[15px] text-white mb-2">Total data privacy</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Your school&apos;s financial and student data never leaves your premises. No third-party servers, no data mining, no risk.</p>
+              </div>
             </div>
 
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <p className="font-bold text-[15px] text-white mb-2">One-time cost</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">No monthly fees or subscriptions. Pay once and the system is yours forever. Built for schools with tight budgets.</p>
+            <div className="bg-[#07090E] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <p className="font-bold text-[15px] text-white mb-2">One-time cost</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">No monthly fees or subscriptions. Pay once and the system is yours forever. Built for schools with tight budgets.</p>
+              </div>
             </div>
 
-            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
-              <p className="font-bold text-[15px] text-white mb-2">Instant receipts</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Parents and guardians get a professional printed receipt the moment they pay. No more &quot;I paid but there&apos;s no proof&quot; disputes.</p>
+            <div className="bg-[#07090E] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <p className="font-bold text-[15px] text-white mb-2">Instant receipts</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">Parents and guardians get a professional printed receipt the moment they pay. No more &quot;I paid but there&apos;s no proof&quot; disputes.</p>
+              </div>
             </div>
 
           </div>

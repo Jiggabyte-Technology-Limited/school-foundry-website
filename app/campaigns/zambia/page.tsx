@@ -2,18 +2,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  BarChart3, 
-  Users, 
-  Monitor, 
-  Zap, 
-  Map, 
-  Globe, 
+import {
+  BarChart3,
+  Users,
+  Monitor,
+  Zap,
+  Map,
+  Globe,
   ArrowRight,
   TrendingUp,
   Award,
   FileText,
-  ExternalLink
+  ExternalLink,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -234,7 +236,7 @@ export default function ZambiaCampaignPage() {
         </div>
 
         {/* ── Conclusion / CTA ───────────────────────────────── */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -248,13 +250,32 @@ export default function ZambiaCampaignPage() {
             <div className="w-4 bg-[#EF7D00]" />
           </div>
 
-              <h3 className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tighter text-balance">Ready to move your Zambian school away from paper?</h3>
-          <p className="text-xl text-white/40 max-w-2xl mx-auto mb-12 font-medium">
+          <h3 className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tighter text-balance">Ready to move your Zambian school away from paper?</h3>
+          <p className="text-xl text-white/40 max-w-2xl mx-auto mb-8 font-medium">
             Join the 2025 Digital Transformation wave. Whether you need a local thermal printer bundle or a cloud-based SMS, we have the Zambian solution.
           </p>
+
+          {/* Contact Information */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-sm">
+            <a
+              href="tel:+260570326775"
+              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
+            >
+              <Phone className="w-4 h-4 text-primary" />
+              Zambia: +260 570 326 775
+            </a>
+            <a
+              href="mailto:info@jiggabyte.co.zm"
+              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
+            >
+              <Mail className="w-4 h-4 text-primary" />
+              info@jiggabyte.co.zm
+            </a>
+          </div>
+
           <div className="flex flex-wrap justify-center gap-6 relative z-10">
             <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/20" asChild>
-              <Link href="/#contact">Request a Private Demo</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
             <Button variant="outline" size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold border-white/10 hover:bg-white/5" asChild>
               <Link href="/online">See the Online Cloud</Link>

@@ -12,12 +12,13 @@ const NAV_LINKS = [
   { label: 'Offline Bundle', href: '/offline' },
   { label: 'Cloud Version', href: '/online' },
   { label: 'Work With Us', href: '/work-with-us' },
-  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const MORE_LINKS = [
   { label: 'Zambia Campaign', href: '/campaigns/zambia', flag: '🇿🇲' },
   { label: 'Zimbabwe Campaign', href: '/campaigns/zimbabwe', flag: '🇿🇼' },
+  { label: 'About Us', href: '/about', flag: 'ℹ️' },
   { label: 'Documentation', href: '/docs', flag: '📖' },
 ];
 

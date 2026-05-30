@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, MapPin, ChevronRight } from 'lucide-react';
+import { Mail, MapPin, ChevronRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 
@@ -20,10 +20,22 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-4 text-sm font-medium">
               <a href="mailto:info@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
-                <div className="p-2 rounded-lg bg-white/5 transition-colors group-hover:bg-white/10">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
                 info@jiggabyte.co.zm
+              </a>
+              <a href="tel:+260570326775" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                </div>
+                Zambia: +260 570 326 775
+              </a>
+              <a href="tel:+27696372803" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                </div>
+                Zimbabwe: +27 69 637 2803
               </a>
               <div className="flex items-center gap-3 text-white/40">
                 <div className="p-2 rounded-lg bg-white/5">
@@ -42,7 +54,7 @@ export default function Footer() {
                 { label: 'Cloud Version', href: '/online' },
                 { label: 'About Us', href: '/about' },
                 { label: 'Work With Us', href: '/work-with-us' },
-                { label: 'Request Demo', href: '/#contact' },
+                { label: 'Contact Us', href: '/contact' },
               ].map(({ label, href }) => (
                 <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">
                   <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /> {label}
@@ -61,7 +73,7 @@ export default function Footer() {
                 { label: 'Documentation', href: '/docs', flag: '📖' },
               ].map(({ label, href, flag }) => (
                 <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">
-                  <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /> 
+                  <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   <span className="flex-1">{label}</span>
                   <span className="text-xs grayscale group-hover:grayscale-0 transition-all opacity-50 group-hover:opacity-100">{flag}</span>
                 </Link>
