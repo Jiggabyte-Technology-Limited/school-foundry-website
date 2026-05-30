@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, MapPin, ChevronRight, Phone, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, ChevronRight, Phone } from 'lucide-react';
+import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { Link } from 'wouter';
 
 const ZAMBIA_NUMBER = '260570326775';
@@ -53,7 +54,7 @@ export default function Footer() {
                     className="p-2 rounded-lg bg-white/5 hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors"
                     aria-label={`WhatsApp ${display}`}
                   >
-                    <MessageCircle className="w-4 h-4" />
+                    <WhatsAppIcon className="w-4 h-4" />
                   </a>
                 </div>
               ))}

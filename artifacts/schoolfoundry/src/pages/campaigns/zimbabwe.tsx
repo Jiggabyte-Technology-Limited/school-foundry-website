@@ -9,12 +9,12 @@ import {
   Award,
   Mail,
   Phone,
-  MessageCircle,
   School,
   Users,
   ExternalLink,
   FileText,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 
@@ -285,7 +285,7 @@ export default function ZimbabweCampaignPage() {
               <Phone className="w-4 h-4 text-primary" />
               Zimbabwe: {ZIM_DISPLAY}
               <a href={`tel:+${ZIM_NUMBER}`} className="ml-1 p-1 rounded hover:bg-primary/10 hover:text-primary transition-colors" title="Call"><Phone className="w-3.5 h-3.5" /></a>
-              <a href={`https://wa.me/${ZIM_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors" title="WhatsApp"><MessageCircle className="w-3.5 h-3.5" /></a>
+              <a href={`https://wa.me/${ZIM_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors" title="WhatsApp"><WhatsAppIcon className="w-3.5 h-3.5" /></a>
             </div>
             <a href="mailto:schoolfoundry@jiggabyte.co.zm"
               className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10">

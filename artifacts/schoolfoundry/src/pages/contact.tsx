@@ -9,8 +9,8 @@ import {
   CheckCircle,
   AlertCircle,
   Send,
-  MessageCircle,
 } from 'lucide-react';
+import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -182,7 +182,7 @@ export default function ContactPage() {
                     </a>
                     <a href={`https://wa.me/${number}`} target="_blank" rel="noopener noreferrer"
                       className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white/5 hover:bg-[#25D366]/20 hover:text-[#25D366] text-white/70 rounded-lg font-bold text-xs border border-white/10 transition-all">
-                      <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
+                      <WhatsAppIcon className="w-3.5 h-3.5" /> WhatsApp
                     </a>
                   </div>
                 </div>
