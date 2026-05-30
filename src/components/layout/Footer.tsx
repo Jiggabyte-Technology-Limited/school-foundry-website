@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Mail, MapPin, ChevronRight, Phone } from 'lucide-react';
+import { Mail, MapPin, ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 
@@ -31,11 +31,23 @@ export default function Footer() {
                 </div>
                 Zambia: +260 570 326 775
               </a>
+              <a href="https://wa.me/260570326775" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
+                  <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                </div>
+                WhatsApp Zambia
+              </a>
               <a href="tel:+27696372803" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
                 <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
                 Zimbabwe: +27 69 637 2803
+              </a>
+              <a href="https://wa.me/27696372803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
+                  <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                </div>
+                WhatsApp Zimbabwe
               </a>
               <div className="flex items-center gap-3 text-white/40">
                 <div className="p-2 rounded-lg bg-white/5">
@@ -70,7 +82,6 @@ export default function Footer() {
                 { label: 'Zambia Campaign', href: '/campaigns/zambia', flag: '🇿🇲' },
                 { label: 'Zimbabwe Campaign', href: '/campaigns/zimbabwe', flag: '🇿🇼' },
                 { label: 'Legal & POPIA', href: '/legal', flag: '⚖️' },
-                { label: 'Documentation', href: '/docs', flag: '📖' },
               ].map(({ label, href, flag }) => (
                 <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">
                   <ChevronRight className="w-3.5 h-3.5 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
