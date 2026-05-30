@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="16" fill="#0B0D13"/>
+  <!-- Paper roll 1 (back left) -->
+  <ellipse cx="140" cy="135" rx="35" ry="12" fill="#e8e5df" stroke="#d5d2cc" stroke-width="1"/>
+  <rect x="105" y="135" width="70" height="60" fill="#f0ede7" stroke="#d5d2cc" stroke-width="1"/>
+  <ellipse cx="140" cy="195" rx="35" ry="12" fill="#f0ede7" stroke="#d5d2cc" stroke-width="1.5"/>
+  <ellipse cx="140" cy="195" rx="14" ry="5" fill="#0B0D13"/>
+  <!-- Paper roll 2 (back right) -->
+  <ellipse cx="220" cy="128" rx="35" ry="12" fill="#e8e5df" stroke="#d5d2cc" stroke-width="1"/>
+  <rect x="185" y="128" width="70" height="60" fill="#f0ede7" stroke="#d5d2cc" stroke-width="1"/>
+  <ellipse cx="220" cy="188" rx="35" ry="12" fill="#f0ede7" stroke="#d5d2cc" stroke-width="1.5"/>
+  <ellipse cx="220" cy="188" rx="14" ry="5" fill="#0B0D13"/>
+  <!-- Paper roll 3 (front center) -->
+  <ellipse cx="180" cy="148" rx="38" ry="14" fill="#e8e5df" stroke="#d5d2cc" stroke-width="1"/>
+  <rect x="142" y="148" width="76" height="65" fill="#f5f2ec" stroke="#d5d2cc" stroke-width="1"/>
+  <ellipse cx="180" cy="213" rx="38" ry="14" fill="#f5f2ec" stroke="#d5d2cc" stroke-width="1.5"/>
+  <ellipse cx="180" cy="213" rx="15" ry="5.5" fill="#0B0D13"/>
+  <!-- Additional rolls hint -->
+  <ellipse cx="280" cy="140" rx="30" ry="10" fill="#e0ddd7" stroke="#ccc9c3" stroke-width="1" opacity="0.5"/>
+  <rect x="250" y="140" width="60" height="50" fill="#e8e5df" stroke="#ccc9c3" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="280" cy="190" rx="30" ry="10" fill="#e8e5df" stroke="#ccc9c3" stroke-width="1" opacity="0.5"/>
+  <!-- Count badge -->
+  <circle cx="310" cy="100" r="22" fill="#F97316"/>
+  <text x="310" y="96" text-anchor="middle" fill="white" font-family="system-ui" font-size="16" font-weight="900">10</text>
+  <text x="310" y="110" text-anchor="middle" fill="white" font-family="system-ui" font-size="8" font-weight="600">ROLLS</text>
+  <!-- Label -->
+  <text x="200" y="268" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="700" opacity="0.6">80×80MM THERMAL PAPER ROLLS</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="16" fill="#0B0D13"/>
+  <!-- Monitor -->
+  <rect x="100" y="70" width="200" height="130" rx="8" fill="#1a1d24" stroke="#2a2d34" stroke-width="2"/>
+  <!-- Screen -->
+  <rect x="108" y="78" width="184" height="106" rx="4" fill="#07090E"/>
+  <!-- App UI mockup on screen -->
+  <!-- Top bar -->
+  <rect x="112" y="82" width="176" height="14" rx="2" fill="#15171e"/>
+  <circle cx="122" cy="89" r="3" fill="#F97316"/>
+  <rect x="132" y="86" width="40" height="6" rx="2" fill="#F97316" opacity="0.3"/>
+  <!-- Sidebar -->
+  <rect x="112" y="98" width="40" height="82" fill="#15171e"/>
+  <rect x="117" y="104" width="30" height="5" rx="1" fill="#F97316" opacity="0.5"/>
+  <rect x="117" y="114" width="30" height="4" rx="1" fill="#ffffff" opacity="0.1"/>
+  <rect x="117" y="122" width="30" height="4" rx="1" fill="#ffffff" opacity="0.1"/>
+  <rect x="117" y="130" width="30" height="4" rx="1" fill="#ffffff" opacity="0.1"/>
+  <!-- Content area -->
+  <rect x="158" y="104" width="65" height="30" rx="4" fill="#F97316" stroke="#F97316" stroke-width="0.5" opacity="0.15"/>
+  <rect x="230" y="104" width="52" height="30" rx="4" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+  <rect x="158" y="140" width="124" height="36" rx="4" fill="#ffffff" stroke="#ffffff" stroke-width="0.5" opacity="0.05"/>
+  <!-- Stats text -->
+  <rect x="164" y="110" width="35" height="6" rx="1" fill="#F97316" opacity="0.6"/>
+  <rect x="164" y="120" width="20" height="4" rx="1" fill="#ffffff" opacity="0.2"/>
+  <!-- Monitor stand -->
+  <rect x="175" y="200" width="50" height="6" rx="2" fill="#1a1d24"/>
+  <rect x="160" y="206" width="80" height="5" rx="2" fill="#1a1d24" stroke="#2a2d34" stroke-width="1"/>
+  <!-- Lifetime badge -->
+  <rect x="130" y="222" width="140" height="26" rx="13" fill="#F97316" stroke="#F97316" stroke-width="1" opacity="0.2"/>
+  <text x="200" y="239" text-anchor="middle" fill="#F97316" font-family="system-ui" font-size="11" font-weight="700">LIFETIME LICENSE INCLUDED</text>
+  <!-- Label -->
+  <text x="200" y="274" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="700" opacity="0.6">SCHOOLFOUNDRY SOFTWARE</text>
+</svg>

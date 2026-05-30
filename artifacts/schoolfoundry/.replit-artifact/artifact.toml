@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "SchoolFoundry"
+version = "1.0.0"
+id = "artifacts/schoolfoundry"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24930
+
+[services.development]
+run = "pnpm --filter @workspace/schoolfoundry run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/schoolfoundry", "run", "build" ]
+publicDir = "artifacts/schoolfoundry/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24930"
+BASE_PATH = "/"

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" rx="16" fill="#0B0D13"/>
+  <!-- Printer body -->
+  <rect x="110" y="120" width="180" height="100" rx="12" fill="#1a1d24" stroke="#2a2d34" stroke-width="2"/>
+  <!-- Paper slot top -->
+  <rect x="130" y="108" width="140" height="16" rx="4" fill="#1a1d24" stroke="#2a2d34" stroke-width="1.5"/>
+  <!-- Receipt paper coming out -->
+  <rect x="155" y="60" width="90" height="58" rx="3" fill="#f5f5f0" stroke="#e0e0d8" stroke-width="1"/>
+  <!-- Receipt lines -->
+  <line x1="165" y1="72" x2="235" y2="72" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="165" y1="82" x2="225" y2="82" stroke="#ddd" stroke-width="1"/>
+  <line x1="165" y1="90" x2="215" y2="90" stroke="#ddd" stroke-width="1"/>
+  <line x1="165" y1="98" x2="230" y2="98" stroke="#ddd" stroke-width="1"/>
+  <line x1="165" y1="106" x2="210" y2="106" stroke="#ddd" stroke-width="1"/>
+  <!-- Power LED -->
+  <circle cx="140" cy="145" r="4" fill="#F97316"/>
+  <circle cx="140" cy="145" r="6" fill="#F97316" opacity="0.3"/>
+  <!-- Feed button -->
+  <rect x="155" y="140" width="20" height="10" rx="3" fill="#2a2d34" stroke="#3a3d44" stroke-width="1"/>
+  <!-- Base -->
+  <rect x="105" y="218" width="190" height="8" rx="4" fill="#15171e"/>
+  <!-- Label -->
+  <text x="200" y="268" text-anchor="middle" fill="white" font-family="system-ui" font-size="13" font-weight="700" opacity="0.6">HIGH-SPEED THERMAL PRINTER</text>
+</svg>
