@@ -2,17 +2,11 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
-  "workspaces": [
-    "artifacts/*",
-    "lib/*",
-    "lib/integrations/*",
-    "scripts"
-  ],
   "scripts": {
-    "dev": "npm run dev --workspace=@workspace/schoolfoundry",
-    "build": "npm run typecheck && npm run build --workspace=@workspace/schoolfoundry",
+    "dev": "pnpm --filter @workspace/schoolfoundry dev",
+    "build": "pnpm run typecheck && pnpm --filter @workspace/schoolfoundry build",
     "typecheck:libs": "tsc --build",
-    "typecheck": "npm run typecheck:libs && npm run typecheck --workspaces --if-present"
+    "typecheck": "pnpm run typecheck:libs && pnpm run typecheck --filter=* --if-present"
   },
   "private": true,
   "devDependencies": {
