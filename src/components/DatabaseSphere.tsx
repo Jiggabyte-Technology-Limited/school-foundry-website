@@ -194,7 +194,13 @@ export default function DatabaseSphere() {
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
-      time += 0.01;
+      
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (!prefersReducedMotion) {
+        time += 0.01;
+        baseRotationY += 0.002;
+      }
 
       const targetRotationY = mouseX * 0.3;
       const targetRotationX = mouseY * 0.2;
@@ -202,11 +208,14 @@ export default function DatabaseSphere() {
       currentRotationY += (targetRotationY - currentRotationY) * 0.05;
       currentRotationX += (targetRotationX - currentRotationX) * 0.05;
 
-      baseRotationY += 0.002;
-
       dbGroup.rotation.y = baseRotationY + currentRotationY;
       dbGroup.rotation.x = baseRotationX + currentRotationX;
-      dbGroup.position.y = Math.sin(time) * 0.15;
+      
+      if (!prefersReducedMotion) {
+        dbGroup.position.y = Math.sin(time) * 0.15;
+      } else {
+        dbGroup.position.y = 0;
+      }
 
       renderer.render(scene, camera);
     };

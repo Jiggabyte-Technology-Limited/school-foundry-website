@@ -47,7 +47,7 @@ function ScrollSection({ children, className, id }: { children: React.ReactNode;
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
 
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.2], [40, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2], [32, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [0.97, 1]);
   const blurValue = useTransform(scrollYProgress, [0, 0.15], [6, 0]);
   const filter = useMotionTemplate`blur(${blurValue}px)`;
@@ -75,7 +75,7 @@ export default function Home() {
             <motion.div initial="hidden" animate="visible" variants={STAGGER} className="flex flex-col justify-center">
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] sm:text-xs uppercase tracking-widest w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping flex-shrink-0" />
-                <span>AN AFRICAN SCHOOL MANAGEMENT SYSTEM - SMS</span>
+                <span>OFFLINE VERSION AVAILABLE NOW</span>
               </motion.div>
 
               <motion.h1 variants={FADE_UP} className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight text-white mb-6 leading-[0.95]">
@@ -86,7 +86,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 mb-10 max-w-xl leading-relaxed font-medium">
-                Bring your school into the digital age; no internet required. From rural villages to capital cities, we're helping Southern African schools replace manual record keeping with digital school management that just works.
+                SchoolFoundry helps you manage fees, receipts, and student records on your office computer, even when the internet is unreliable.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-4 mb-14">
@@ -122,7 +122,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right — 3D Database Sphere with floating glass cards */}
+            {/* Right - 3D Database Sphere with floating glass cards */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -133,11 +133,11 @@ export default function Home() {
                 <DatabaseSphere />
               </div>
 
-              {/* Floating Glass Cards — clock positions */}
+              {/* Floating Glass Cards - clock positions */}
               {[
                 { icon: ReceiptText, title: 'Record + Print', text: 'Instant thermal receipts', pos: 'top-0 left-1/2 -translate-x-1/2 translate-y-4', delay: 1.0, floatDelay: '0s' },
                 { icon: FileText, title: 'Analytics', text: 'Visual school-wide data', pos: 'top-1/2 -right-6 -translate-y-1/2', delay: 1.2, floatDelay: '3s' },
-                { icon: Cpu, title: 'Core OS', text: 'Works on any Windows PC', pos: 'bottom-0 left-1/2 -translate-x-1/2 -translate-y-4', delay: 1.4, floatDelay: '4.5s' },
+                { icon: Cpu, title: 'Office Computer', text: 'Works on any Windows PC', pos: 'bottom-0 left-1/2 -translate-x-1/2 -translate-y-4', delay: 1.4, floatDelay: '4.5s' },
                 { icon: Database, title: 'Local Vault', text: 'Encryption by default', pos: 'top-1/2 -left-6 -translate-y-1/2', delay: 1.6, floatDelay: '1.5s' },
               ].map((card, i) => (
                 <motion.div
@@ -162,28 +162,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── What exactly is SchoolFoundry? ─────────────────────────── */}
+      {/* What is SchoolFoundry? */}
       <ScrollSection id="what-is-sms" className="py-16 sm:py-24 bg-[#07090E] relative">
         <div className="container mx-auto px-6">
           <div className="mb-12">
             <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">School Management, Simplified</p>
             <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[520px] tracking-tight">
-              What exactly is <span className="text-primary">SchoolFoundry?</span>
+              What is <span className="text-primary">SchoolFoundry?</span>
             </h3>
-            <p className="text-[15px] text-white/50 max-w-[520px] leading-[1.65]">
-              Your school’s digital transformation partner. We replace paper-based school management systems with smart, offline technology that tracks every transaction, prints professional receipts, and gives you real-time insights into your school’s finances and more.
+              <p className="text-[15px] text-white/50 max-w-[520px] leading-[1.65]">
+              Your school's record and fee management partner. Simple tools for fees, receipts, records, and daily operations.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Student Tracking — wide */}
+            {/* Student Tracking - wide */}
             <div className="md:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child which allows you to track their finances and more. Print student statements, fees and more</p>
+                <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child so you can track balances, issue statements, and keep student records organized without paper files.</p>
             </div>
 
             {/* Payment Tracking */}
@@ -192,16 +192,16 @@ export default function Home() {
                 <ReceiptText className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Payment Tracking That Works</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Say goodbye to manual cash books and missing receipts. Every payment is captured digitally, backed up automatically, and ready for instant reporting whenever you need it.</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">Say goodbye to manual cash books and missing receipts. Every payment is recorded and ready for reporting whenever you need it.</p>
             </div>
 
-            {/* Financial Confidence — full width */}
+            {/* Financial Confidence - full width */}
             <div className="md:col-span-3 bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <BarChart3 className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Lead with Financial Confidence</p>
-              <p className="text-[13px] text-white/50 leading-[1.6] max-w-2xl">Forget spreadsheets and manual tallies. Get instant answers on collections, outstanding fees, and payment trends. Every decision backed by real-time data, not yesterdayl’s guesswork.</p>
+              <p className="text-[13px] text-white/50 leading-[1.6] max-w-2xl">Get a clear view of collections, outstanding fees, and payment trends. Every decision is backed by the latest information.</p>
             </div>
 
           </div>
@@ -216,8 +216,8 @@ export default function Home() {
             <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[480px] tracking-tight">
               Pick the Right Fit <span className="text-primary">For Your School</span>
             </h3>
-            <p className="text-[15px] text-white/50 max-w-[480px] leading-[1.65]">
-              Every school is different. Whether you’re running without reliable internet or you’re ready to go fully online, there’s a version of SchoolFoundry made for exactly where you are.
+              <p className="text-[15px] text-white/50 max-w-[480px] leading-[1.65]">
+              Every school is different. Whether you are running without reliable internet or you are ready to go fully online, there is a version of SchoolFoundry made for exactly where you are.
             </p>
           </div>
 
@@ -234,7 +234,7 @@ export default function Home() {
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">The Offline Bundle</p>
                 <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                  No signal? No stress. Built for schools where the internet comes and goes, works completely offline and ships with its own fast receipt printer.
+                  No internet? No problem. Built for schools that need a dependable system, the offline version stores information on your office computer and prints receipts quickly.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-primary font-bold text-[13px] group-hover:translate-x-1 transition-transform">
                   See the Offline Version <ArrowRight className="w-3.5 h-3.5" />
@@ -256,7 +256,7 @@ export default function Home() {
                   <span className="text-[10px] font-bold uppercase tracking-wider bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full">Coming Soon</span>
                 </div>
                 <p className="text-[13px] text-white/50 leading-[1.6] mb-4">
-                  Manage your school from any device. Our cloud version includes the full SIS suite, gradebooks, attendance, and integrated payments via WhatsApp, Card, and Mobile Money.
+                  Manage your school from any device. Our cloud version will add shared records, gradebooks, attendance, and payments.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-primary font-bold text-[13px] group-hover:translate-x-1 transition-transform">
                   Explore the Cloud <ArrowRight className="w-3.5 h-3.5" />
@@ -276,8 +276,8 @@ export default function Home() {
             <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[480px] tracking-tight">
               Tools that actually<br /><span className="text-primary">get work done.</span>
             </h3>
-            <p className="text-[15px] text-white/50 max-w-[420px] leading-[1.65]">
-              All features are available on the <span className="text-blue-500 font-medium">Cloud Version.</span> The Finance and Payments feature has limited capabilities on the offline version.
+              <p className="text-[15px] text-white/50 max-w-[420px] leading-[1.65]">
+              The offline version gives you the essential tools you need. The cloud version will add access from any device, shared records, and parent access.
             </p>
           </div>
 
@@ -289,7 +289,7 @@ export default function Home() {
                 <CreditCard className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">Finance & Payments</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">
+                <p className="text-[13px] text-white/50 leading-[1.6]">
                 Complete financial control. Generate invoices, track arrears, and accept fee payments directly via <strong className="text-white/70">Bank Cards</strong> or <strong className="text-white/70">Mobile Money</strong>. Generates <strong className="text-white/70">receipts for cash payments</strong> instantly.
               </p>
               <div className="flex flex-wrap items-center gap-3 mt-5">
@@ -311,16 +311,16 @@ export default function Home() {
                   Cash Receipts
                 </span>
               </div>
-              <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Limited in Offline Version</span>
+              <span className="inline-block text-[10px] font-bold bg-orange-500/10 text-orange-500 rounded px-2 py-0.5 border border-orange-500/20 mt-3">Limited in Offline Alpha</span>
             </div>
 
-            {/* AI School Assistant */}
+            {/* Parent Help by WhatsApp */}
             <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Bot className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">AI School Assistant</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">A school AI assistant that knows everything about your school. Parents can check <strong className="text-white/70">account statements</strong> and <strong className="text-white/70">pay fees</strong> via M-Pesa, EcoCash, Momo, or Bank Card instantly. Communicate with parents and students via <strong className="text-white/70">WhatsApp</strong>.</p>
+              <p className="font-bold text-[15px] text-white mb-1">Parent Help by WhatsApp</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">Parents can ask for account statements, pay fees, and receive updates through WhatsApp.</p>
               <div className="flex items-center gap-2 mt-3">
                 <span className="inline-flex items-center gap-1.5 text-[10px] font-bold bg-[#25D366]/10 text-[#25D366] rounded px-2 py-1">
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.43 1.27 4.88L2 22l5.23-1.24C8.7 21.56 10.3 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.36 14.29c-.23.64-1.34 1.23-1.85 1.3-.47.07-1.07.1-1.73-.11-.4-.13-.91-.31-1.56-.61-2.74-1.24-4.53-4.01-4.67-4.2-.14-.19-1.12-1.49-1.12-2.85s.71-2.02.96-2.3c.25-.27.55-.34.73-.34.18 0 .37 0 .53.01.17.01.4-.06.62.48.23.55.78 1.9.85 2.04.07.14.11.29.02.47-.09.18-.14.29-.27.44-.14.16-.29.35-.41.47-.14.14-.28.29-.12.57.16.27.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.27.14.43.12.59-.07.16-.19.69-.8.87-1.08.18-.27.37-.23.62-.14.25.09 1.6.76 1.88.89.27.14.45.21.52.32.07.12.07.66-.16 1.3z"/></svg>
@@ -336,7 +336,7 @@ export default function Home() {
                 <WifiOff className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[15px] text-white mb-1">100% Offline</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature runs locally on your machine — no cloud dependency, no downtime when the network drops.</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">Works without any internet connection. Every feature runs locally on your machine, with no cloud dependency and no downtime when the network drops.</p>
               <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-500 rounded px-2 py-0.5 mt-2.5">Offline Version</span>
             </div>
 
@@ -347,7 +347,7 @@ export default function Home() {
                     <FileText className="w-[18px] h-[18px] text-primary" />
                   </div>
                   <p className="font-bold text-[15px] text-white mb-1">Admissions & Enrollment</p>
-                  <p className="text-[13px] text-white/50 leading-[1.6]">Digital applications, automated approval workflows, and onboarding processes to manage new intake.</p>
+                  <p className="text-[13px] text-white/50 leading-[1.6]">Simple applications, clear approvals, and a smooth start for new learners.</p>
                   <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-500 rounded px-2 py-0.5 mt-2.5">Offline Version</span>
                 </div>
                 <div>
@@ -365,7 +365,7 @@ export default function Home() {
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Student Information (SIS)</p>
+              <p className="font-bold text-[15px] text-white mb-1">Student Records</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">Centralized profiles storing academic records, attendance history, behavioral data, and documentation.</p>
               <span className="inline-block text-[10px] font-bold tracking-wider uppercase bg-blue-500/10 text-blue-500 rounded px-2 py-0.5 mt-2.5">Online Version</span>
             </div>
@@ -416,7 +416,7 @@ export default function Home() {
           {/* Bottom info bar */}
           <div className="mt-6 px-5 py-4 bg-white/[0.03] rounded-xl flex items-center gap-4 text-[13px] text-white/50">
             <Info className="w-4 h-4 text-primary flex-shrink-0" />
-            <span><strong className="text-white/70 font-medium">Full Suite:</strong> SIS, Admissions, Attendance, Gradebook, Finance, and Staff/Parent Portals are standard. Payments supported via WhatsApp, Bank Cards, M-Pesa, EcoCash, and Momo.</span>
+            <span><strong className="text-white/70 font-medium">Full Suite:</strong> Student records, admissions, attendance, gradebook, finance, and staff/parent access are included. Payments supported via WhatsApp, bank cards, M-Pesa, EcoCash, and Momo.</span>
           </div>
         </div>
       </ScrollSection>
@@ -427,7 +427,7 @@ export default function Home() {
           <div className="mb-12">
             <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">Get in touch</p>
             <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[480px] tracking-tight">
-              Ready to start your school’s <span className="text-primary">new chapter?</span>
+              Ready to start your school&apos;s <span className="text-primary">new chapter?</span>
             </h3>
             <p className="text-[15px] text-white/50 max-w-[480px] leading-[1.65]">
               Let’s have a chat and show you exactly how SchoolFoundry works. No complicated tech talk, no pressure, and definitely no commitment.
@@ -436,7 +436,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
 
-            {/* Left — selling points */}
+            {/* Left - selling points */}
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-8">
                 <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.svg`} alt="SchoolFoundry" className="w-10 h-10" />
@@ -447,9 +447,9 @@ export default function Home() {
               </div>
               <div className="space-y-5">
                 {[
-                  'One-off payment—no annoying monthly bills',
-                  'Works offline. No internet? No problem.',
-                  'Simple setup—no IT degree required',
+                  'One-off payment, no monthly bills',
+                  'Works offline. No internet- No problem.',
+                  'Simple setup, no special training required',
                   'Friendly guides included to help you along',
                   'Trusted by schools across Southern Africa',
                 ].map((item, i) => (
@@ -460,11 +460,11 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 pt-6 border-t border-white/5">
-                <p className="text-white/30 text-[12px] leading-[1.6]">Have questions? Reach out and our team will walk you through everything — from setup to your first receipt print.</p>
+                <p className="text-white/30 text-[12px] leading-[1.6]">Have questions- Reach out and our team will walk you through everything, from setup to your first receipt print.</p>
               </div>
             </div>
 
-            {/* Right — form */}
+            {/* Right - form */}
             <div className="bg-[#07090E] p-7 sm:p-10">
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -488,8 +488,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="space-y-1.5">
-                  <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">How can we help?</label>
-                  <Textarea data-testid="textarea-school-info" className="bg-white/5 border-white/10 text-white min-h-[100px] rounded-xl focus:border-primary transition-all resize-none placeholder:text-white/15" placeholder="Tell us a little about your school—how many students do you have?" />
+                  <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">How can we help-</label>
+                  <Textarea data-testid="textarea-school-info" className="bg-white/5 border-white/10 text-white min-h-[100px] rounded-xl focus:border-primary transition-all resize-none placeholder:text-white/15" placeholder="Tell us a little about your school, how many students do you have-" />
                 </div>
                 <Button data-testid="button-submit-demo" className="w-full h-14 text-base font-bold rounded-xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
                   Request a Friendly Demo

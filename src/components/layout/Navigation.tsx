@@ -72,9 +72,16 @@ export default function Navigation() {
               <Link 
                 key={label} 
                 href={href} 
-                className={`relative transition-colors duration-300 hover:text-primary ${isActive ? 'text-primary' : 'text-white/90'}`}
+                className={`relative transition-colors duration-300 hover:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-[#07090E] rounded-sm ${isActive ? 'text-primary' : 'text-white/90'}`}
               >
                 {label}
+                {isActive && (
+                  <motion.div 
+                    layoutId="nav-active"
+                    className="absolute -bottom-1 left-0 right-0 h-px bg-primary"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
               </Link>
             );
           })}
@@ -83,7 +90,7 @@ export default function Navigation() {
           <div className="relative group/dropdown">
             <button 
               onMouseEnter={() => setDropdownOpen(true)}
-              className={`flex items-center gap-1.5 transition-colors duration-300 hover:text-primary ${MORE_LINKS.some(link => pathname === link.href) ? 'text-primary' : 'text-white/90'}`}
+              className={`flex items-center gap-1.5 transition-colors duration-300 hover:text-primary outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-[#07090E] rounded-sm ${MORE_LINKS.some(link => pathname === link.href) ? 'text-primary' : 'text-white/90'}`}
             >
               More <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -97,7 +104,7 @@ export default function Navigation() {
                   <Link
                     key={label}
                     href={href}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 text-[11px] uppercase tracking-widest font-bold ${pathname === href ? 'bg-primary/10 text-primary' : 'text-white/60 hover:text-white hover:bg-white/5'}`}
+                    className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 text-[11px] uppercase tracking-widest font-bold outline-none focus-visible:bg-white/5 focus-visible:text-primary ${pathname === href ? 'bg-primary/10 text-primary' : 'text-white/60 hover:text-white hover:bg-white/5'}`}
                   >
                     <span>{label}</span>
                     <span className="text-base grayscale group-hover:grayscale-0 transition-all">{flag}</span>
@@ -109,7 +116,7 @@ export default function Navigation() {
 
           <Link 
             href="/#contact" 
-            className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-all shadow-[0_8px_20px_-6px_rgba(249,115,22,0.4)] hover:shadow-[0_12px_25px_-4px_rgba(249,115,22,0.6)] hover:-translate-y-0.5 active:translate-y-0"
+            className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-all shadow-[0_8px_20px_-6px_rgba(249,115,22,0.4)] hover:shadow-[0_12px_25px_-4px_rgba(249,115,22,0.6)] hover:-translate-y-0.5 active:translate-y-0 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090E]"
           >
             Request Demo
           </Link>
@@ -149,12 +156,12 @@ export default function Navigation() {
               <div className="mt-4 pt-4 border-t border-white/5">
                 <p className="px-4 text-[10px] uppercase tracking-[0.3em] font-black text-white/30 mb-4">Explore More</p>
                 {MORE_LINKS.map(({ label, href, flag }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    onClick={closeMenu}
-                    className={`font-bold py-3 px-4 rounded-2xl transition-all text-base flex items-center justify-between ${pathname === href ? 'text-primary bg-white/5' : 'text-white/50 hover:text-primary'}`}
-                  >
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={closeMenu}
+                  className={`font-bold py-3 px-4 rounded-2xl transition-all text-base flex items-center justify-between ${pathname === href ? 'text-primary bg-white/5' : 'text-white/50 hover:text-primary'}`}
+                >
                     <span>{label}</span>
                     <span>{flag}</span>
                   </Link>
