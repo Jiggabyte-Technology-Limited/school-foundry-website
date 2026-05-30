@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if your default branch is different (e.g. master)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build frontend
+        run: npm run build --workspace=@workspace/schoolfoundry
+        env:
+          PORT: 3000
+          # This automatically determines the base URL dynamically based on your GitHub repository name.
+          # e.g., if hosted at https://<username>.github.io/<repo-name>/, BASE_PATH is /<repo-name>/.
+          # If you use a custom apex domain, you can change this to '/'
+          BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Copy index.html to 404.html for SPA routing
+        run: cp artifacts/schoolfoundry/dist/public/index.html artifacts/schoolfoundry/dist/public/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: artifacts/schoolfoundry/dist/public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

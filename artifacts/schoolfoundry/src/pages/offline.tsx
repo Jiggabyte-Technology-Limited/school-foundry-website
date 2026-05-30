@@ -18,6 +18,7 @@ import {
   Receipt,
   Monitor,
 } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -77,7 +78,7 @@ export default function OfflinePage() {
               className="rounded-2xl overflow-hidden border border-white/10"
             >
               <img
-                src="/offline-bundle.jpg"
+                src={asset("/offline-bundle.jpg")}
                 alt="SchoolFoundry Offline Version, laptop, receipt printer, and paper rolls"
                 className="w-full h-auto object-cover"
               />
@@ -103,7 +104,7 @@ export default function OfflinePage() {
 
             <div className="sm:col-span-2 bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src="/bundle-printer.jpg" alt="High-Speed Thermal Printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={asset("/bundle-printer.jpg")} alt="High-Speed Thermal Printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -118,7 +119,7 @@ export default function OfflinePage() {
 
             <div className="bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src="/bundle-paper.jpg" alt="10 Thermal Paper Rolls" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={asset("/bundle-paper.jpg")} alt="10 Thermal Paper Rolls" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -133,7 +134,7 @@ export default function OfflinePage() {
 
             <div className="sm:col-span-2 bg-[#07090E] group cursor-default">
               <div className="w-full h-48 sm:h-56 bg-[#0B0D13] overflow-hidden">
-                <img src="/welcome-school-foundry.png" alt="SchoolFoundry Software with Lifetime License" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={asset("/welcome-school-foundry.png")} alt="SchoolFoundry Software with Lifetime License" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
                 <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">

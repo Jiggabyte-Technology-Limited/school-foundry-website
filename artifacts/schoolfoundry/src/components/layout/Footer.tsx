@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, MapPin, ChevronRight, Phone } from 'lucide-react';
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { Link } from 'wouter';
+import { asset } from '@/lib/asset';
 
 const ZAMBIA_NUMBER = '260570326775';
 const ZAMBIA_DISPLAY = '+260 570 326 775';
@@ -15,7 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 mb-20">
           <div className="sm:col-span-2">
             <Link href="/" className="flex items-center gap-3 mb-8 group w-fit outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-8 focus-visible:ring-offset-[#030508] rounded-sm">
-              <img src="/logo.svg" alt="" width={40} height={40} className="h-10 w-auto transition-transform duration-500 group-hover:scale-110" />
+              <img src={asset("/logo.svg")} alt="" width={40} height={40} className="h-10 w-auto transition-transform duration-500 group-hover:scale-110" />
               <span className="font-bold text-2xl tracking-tight text-white">School<span className="font-light text-primary group-hover:text-primary/80 transition-colors">Foundry</span></span>
             </Link>
             <p className="text-white/40 leading-relaxed mb-8 text-base">

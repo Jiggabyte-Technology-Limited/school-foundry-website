@@ -13,6 +13,7 @@ import {
   Receipt,
   School,
 } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -197,7 +198,7 @@ export default function AboutPage() {
               className="bg-[#0B0D13] overflow-hidden"
             >
               <img
-                src="/file-cabinet.jpg"
+                src={asset("/file-cabinet.jpg")}
                 alt="Overflowing file cabinet - the paper-based system SchoolFoundry replaces"
                 className="w-full h-full object-cover min-h-[300px] hover:scale-105 transition-transform duration-700"
               />
@@ -310,7 +311,7 @@ export default function AboutPage() {
 
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center cursor-default">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/logo.svg" alt="" className="h-10 w-auto" />
+                <img src={asset("/logo.svg")} alt="" className="h-10 w-auto" />
                 <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
               </div>
               <p className="text-[15px] text-white/50 leading-[1.7] mb-6">

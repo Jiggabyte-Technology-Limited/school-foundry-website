@@ -22,6 +22,7 @@ import {
   Monitor,
   Map,
 } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -88,7 +89,7 @@ export default function CloudPage() {
 
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.3, duration: 0.8 }}>
               <img
-                src="/online-cloud.jpg"
+                src={asset("/online-cloud.jpg")}
                 alt="SchoolFoundry Cloud - manage your school from any device"
                 className="w-full rounded-3xl shadow-2xl shadow-blue-500/10 border border-white/5"
               />
@@ -137,9 +138,9 @@ export default function CloudPage() {
               </p>
               <div className="flex flex-wrap items-center gap-2 mt-3">
                 {[
-                  { src: '/ecocash-logo.png', alt: 'EcoCash' },
-                  { src: '/momo-logo.png', alt: 'MTN MoMo' },
-                  { src: '/mpesa-logo.png', alt: 'M-Pesa' },
+                  { src: asset('/ecocash-logo.png'), alt: 'EcoCash' },
+                  { src: asset('/momo-logo.png'), alt: 'MTN MoMo' },
+                  { src: asset('/mpesa-logo.png'), alt: 'M-Pesa' },
                 ].map(({ src, alt }) => (
                   <div key={alt} className="bg-white rounded-md px-2 py-1 flex items-center justify-center h-7">
                     <img src={src} alt={alt} className="h-4 w-auto object-contain" />
@@ -195,7 +196,7 @@ export default function CloudPage() {
                 Accept mobile money, bank cards, WhatsApp payments, and cash receipts. Keep every payment in one place.
               </p>
               <div className="flex flex-wrap items-center gap-2 mt-4">
-                {['/ecocash-logo.png', '/momo-logo.png', '/mpesa-logo.png'].map((src, i) => (
+                {[asset('/ecocash-logo.png'), asset('/momo-logo.png'), asset('/mpesa-logo.png')].map((src, i) => (
                   <div key={i} className="bg-white rounded-md px-2 py-1 flex items-center justify-center h-7">
                     <img src={src} className="h-4 w-auto object-contain" alt="" />
                   </div>

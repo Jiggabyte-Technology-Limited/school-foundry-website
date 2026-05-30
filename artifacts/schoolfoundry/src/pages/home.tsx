@@ -17,6 +17,7 @@ import {
   Calendar,
   CreditCard,
   ClipboardList,
+  Monitor,
   ShieldCheck,
   WifiOff,
   Banknote
@@ -25,6 +26,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from 'wouter';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -208,7 +210,7 @@ export default function Home() {
 
             <Link href="/offline" className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors cursor-pointer group block">
               <div className="w-full h-80 bg-white/5 overflow-hidden">
-                <img src="/offline-bundle.jpg" alt="Thermal receipt printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={asset("/offline-bundle.jpg")} alt="Thermal receipt printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-7">
                 <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center mb-4">
@@ -226,7 +228,7 @@ export default function Home() {
 
             <Link href="/online" className="bg-[#0B0D13] hover:bg-white/[0.03] transition-colors cursor-pointer group block">
               <div className="w-full h-80 bg-white/5 overflow-hidden">
-                <img src="/online-cloud.jpg" alt="Laptop and phone on desk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={asset("/online-cloud.jpg")} alt="Laptop and phone on desk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-7">
                 <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
@@ -272,7 +274,7 @@ export default function Home() {
                 Complete financial control. Generate invoices, track arrears, and accept fee payments directly via <strong className="text-white/70">Bank Cards</strong> or <strong className="text-white/70">Mobile Money</strong>. Generates <strong className="text-white/70">receipts for cash payments</strong> instantly.
               </p>
               <div className="flex flex-wrap items-center gap-3 mt-5">
-                {['/ecocash-logo.png', '/momo-logo.png', '/mpesa-logo.png'].map((src, i) => (
+                {[asset('/ecocash-logo.png'), asset('/momo-logo.png'), asset('/mpesa-logo.png')].map((src, i) => (
                   <div key={i} className="bg-white rounded-lg px-3 py-2 flex items-center justify-center h-10">
                     <img src={src} className="h-6 w-auto object-contain" alt="" />
                   </div>
@@ -405,7 +407,7 @@ export default function Home() {
 
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center">
               <div className="flex items-center gap-3 mb-8">
-                <img src="/logo.svg" alt="SchoolFoundry" className="w-10 h-10" />
+                <img src={asset("/logo.svg")} alt="SchoolFoundry" className="w-10 h-10" />
                 <div>
                   <p className="text-white font-bold text-[16px] leading-tight">SchoolFoundry</p>
                   <p className="text-white/40 text-[11px]">School Management System</p>

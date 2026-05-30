@@ -16,6 +16,7 @@ import {
   Globe,
   BarChart3,
 } from 'lucide-react';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -102,7 +103,7 @@ export default function WorkWithUsPage() {
 
             <div className="bg-[#0B0D13] overflow-hidden">
               <img
-                src="/file-cabinet.jpg"
+                src={asset("/file-cabinet.jpg")}
                 alt="Paper-based school filing systems in Southern Africa"
                 className="w-full h-full object-cover min-h-[300px]"
               />
@@ -224,7 +225,7 @@ export default function WorkWithUsPage() {
 
             <div className="bg-[#0B0D13] overflow-hidden">
               <img
-                src="/offline-bundle.jpg"
+                src={asset("/offline-bundle.jpg")}
                 alt="SchoolFoundry deployment bundle - what $500 buys"
                 className="w-full h-full object-cover min-h-[300px]"
               />
@@ -311,7 +312,7 @@ export default function WorkWithUsPage() {
 
             <div className="bg-[#07090E] p-7 sm:p-10 flex flex-col justify-center cursor-default">
               <div className="flex items-center gap-3 mb-6">
-                <img src="/logo.svg" alt="" className="h-10 w-auto" />
+                <img src={asset("/logo.svg")} alt="" className="h-10 w-auto" />
                 <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
               </div>
               <p className="text-[15px] text-white/50 leading-[1.7] mb-6">

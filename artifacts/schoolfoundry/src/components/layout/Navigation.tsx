@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
+import { asset } from '@/lib/asset';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
@@ -49,7 +50,7 @@ export default function Navigation() {
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group" aria-label="SchoolFoundry Home">
           <div className="relative">
-            <img src="/logo.svg" alt="" width={36} height={36} className="h-9 w-auto relative z-10 transition-transform duration-500 group-hover:scale-110" />
+            <img src={asset("/logo.svg")} alt="" width={36} height={36} className="h-9 w-auto relative z-10 transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </div>
           <span className="font-bold text-xl tracking-tight text-white transition-colors duration-300">

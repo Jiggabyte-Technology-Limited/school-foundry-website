@@ -11,6 +11,7 @@ import {
   Send,
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
+import { asset } from '@/lib/asset';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -225,7 +226,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="bg-white/[0.03] border border-white/5 rounded-[3rem] p-12 sm:p-16 flex flex-col sm:flex-row items-center gap-8 text-center sm:text-left">
             <div className="flex items-center gap-3 flex-shrink-0">
-              <img src="/logo.svg" alt="" className="h-12 w-auto" />
+              <img src={asset("/logo.svg")} alt="" className="h-12 w-auto" />
               <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
             </div>
             <div className="flex-1">
