@@ -58,7 +58,7 @@ export default function CloudPage() {
       </div>
 
       {/* ── Spacer for fixed nav + banner ── */}
-      <div className="h-[128px] sm:h-[140px]" />
+      <div className="h-[110px] sm:h-[120px]" />
 
       {/* ── Hero Section ── */}
       <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
