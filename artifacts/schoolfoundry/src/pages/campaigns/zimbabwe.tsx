@@ -11,7 +11,9 @@ import {
   Phone,
   MessageCircle,
   School,
-  Users
+  Users,
+  ExternalLink,
+  FileText,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -21,17 +23,8 @@ const FADE_UP = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const ZimbabweFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 30" className="w-full h-auto shadow-2xl rounded-sm overflow-hidden border border-white/10">
-    <rect width="45" height="30" fill="#006633"/>
-    <rect width="45" height="12" y="9" fill="#FFFFFF"/>
-    <rect width="45" height="6" y="12" fill="#CE1126"/>
-    <polygon points="0,0 0,30 22.5,15" fill="#000000"/>
-    <polygon points="6,15 7.5,11 9,15 7.5,19" fill="#FCD116"/>
-    <polygon points="9,15 10.5,11 12,15 10.5,19" fill="#FCD116"/>
-    <polygon points="12,15 13.5,11 15,15 13.5,19" fill="#FCD116"/>
-  </svg>
-);
+const ZIM_NUMBER = '27696372803';
+const ZIM_DISPLAY = '+27 69 637 2803';
 
 export default function ZimbabweCampaignPage() {
   return (
@@ -48,7 +41,7 @@ export default function ZimbabweCampaignPage() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40 py-12">
 
           <motion.div initial="hidden" animate="visible" variants={FADE_UP}>
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] uppercase tracking-widest group hover:bg-white/10 transition-all">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all">
               <span className="text-lg">🇿🇼</span>
               <span className="border-l border-white/10 pl-3">Source: MoPSE 2024 Statistics Report</span>
             </div>
@@ -73,7 +66,11 @@ export default function ZimbabweCampaignPage() {
             className="relative"
           >
             <div className="relative z-10 transform lg:rotate-3 hover:rotate-0 transition-transform duration-700 w-full max-w-[500px] mx-auto">
-              <ZimbabweFlag />
+              <img
+                src="https://flagcdn.com/zw.svg"
+                alt="Flag of Zimbabwe"
+                className="w-full h-auto shadow-2xl rounded-sm overflow-hidden border border-white/10"
+              />
             </div>
             <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-[120px] rounded-full -z-20 animate-pulse" />
@@ -97,7 +94,7 @@ export default function ZimbabweCampaignPage() {
               sub: 'Since 2020',
               icon: TrendingUp,
               color: 'text-primary',
-              desc: 'Massive infrastructure investment - nearly 3,000 new schools constructed between 2020 and 2024.'
+              desc: 'Massive infrastructure investment — nearly 3,000 new schools constructed between 2020 and 2024.'
             },
             {
               label: 'Rural Schools',
@@ -105,7 +102,7 @@ export default function ZimbabweCampaignPage() {
               sub: 'Of Primary Schools',
               icon: Map,
               color: 'text-[#006633]',
-              desc: 'The majority of primary learners attend rural schools - perfect for our Offline Bundle solution.'
+              desc: 'The majority of primary learners attend rural schools — perfect for our Offline Bundle solution.'
             }
           ].map((stat, i) => (
             <motion.div
@@ -127,6 +124,26 @@ export default function ZimbabweCampaignPage() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-32 p-8 rounded-3xl bg-white/[0.02] border border-white/5 flex flex-col md:flex-row items-center gap-8 group hover:bg-white/[0.04] transition-all"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+            <FileText className="w-8 h-8 text-primary" />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h4 className="text-xl font-bold text-white mb-1">MoPSE Annual Statistical Report 2024</h4>
+            <p className="text-white/40 text-sm font-medium">Ministry of Primary and Secondary Education. Access the full report for national school statistics.</p>
+          </div>
+          <Button variant="outline" className="rounded-xl border-white/10 hover:bg-white/5 gap-2 flex-shrink-0" asChild>
+            <a href="https://www.mopse.co.zw/sites/default/files/publications/Annual%20Statistical%20Report%202024.pdf" target="_blank" rel="noopener noreferrer">
+              Open Report <ExternalLink className="w-4 h-4" />
+            </a>
+          </Button>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
@@ -205,29 +222,21 @@ export default function ZimbabweCampaignPage() {
                 <Zap className="w-3.5 h-3.5" />
                 <span>Offline-First Design</span>
               </div>
-              <h3 className="text-3xl sm:text-4xl font-black text-white mb-6 tracking-tighter">
-                Built for Rural Zimbabwe
-              </h3>
+              <h3 className="text-3xl sm:text-4xl font-black text-white mb-6 tracking-tighter">Built for Rural Zimbabwe</h3>
               <p className="text-white/50 leading-relaxed font-medium mb-6">
-                With <strong>73% of primary learners in rural schools</strong>, connectivity remains a challenge. Our Offline Bundle works without internet - perfect for schools in Mashonaland East, Masvingo, and beyond.
+                With <strong>73% of primary learners in rural schools</strong>, connectivity remains a challenge. Our Offline Bundle works without internet — perfect for schools in Mashonaland East, Masvingo, and beyond.
               </p>
               <ul className="space-y-4 text-white/60">
                 <li className="flex items-start gap-3">
-                  <div className="p-1 rounded bg-primary/10 mt-1">
-                    <Monitor className="w-4 h-4 text-primary" />
-                  </div>
-                  <span>No internet required - thermal printer setup works standalone</span>
+                  <div className="p-1 rounded bg-primary/10 mt-1"><Monitor className="w-4 h-4 text-primary" /></div>
+                  <span>No internet required — thermal printer setup works standalone</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="p-1 rounded bg-primary/10 mt-1">
-                    <Map className="w-4 h-4 text-primary" />
-                  </div>
+                  <div className="p-1 rounded bg-primary/10 mt-1"><Map className="w-4 h-4 text-primary" /></div>
                   <span>Multi-currency support for ZWL, USD, and ZAR transactions</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="p-1 rounded bg-primary/10 mt-1">
-                    <Users className="w-4 h-4 text-primary" />
-                  </div>
+                  <div className="p-1 rounded bg-primary/10 mt-1"><Users className="w-4 h-4 text-primary" /></div>
                   <span>Instant receipts reduce "I paid but there's no proof" disputes</span>
                 </li>
               </ul>
@@ -272,28 +281,16 @@ export default function ZimbabweCampaignPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-sm">
-            <a
-              href="tel:+27696372803"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
-            >
+            <div className="flex items-center gap-2 px-5 py-3 bg-white/5 text-white rounded-xl font-bold border border-white/10">
               <Phone className="w-4 h-4 text-primary" />
-              Zimbabwe: +27 69 637 2803
-            </a>
-            <a
-              href="https://wa.me/27696372803"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
-            >
-              <MessageCircle className="w-4 h-4 text-primary" />
-              WhatsApp Zimbabwe
-            </a>
-            <a
-              href="mailto:info@jiggabyte.co.zm"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
-            >
+              Zimbabwe: {ZIM_DISPLAY}
+              <a href={`tel:+${ZIM_NUMBER}`} className="ml-1 p-1 rounded hover:bg-primary/10 hover:text-primary transition-colors" title="Call"><Phone className="w-3.5 h-3.5" /></a>
+              <a href={`https://wa.me/${ZIM_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors" title="WhatsApp"><MessageCircle className="w-3.5 h-3.5" /></a>
+            </div>
+            <a href="mailto:schoolfoundry@jiggabyte.co.zm"
+              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10">
               <Mail className="w-4 h-4 text-primary" />
-              info@jiggabyte.co.zm
+              schoolfoundry@jiggabyte.co.zm
             </a>
           </div>
 
@@ -311,7 +308,10 @@ export default function ZimbabweCampaignPage() {
         </motion.div>
 
         <p className="text-center mt-12 text-[10px] uppercase tracking-[0.4em] font-black text-white/20">
-          Source: Ministry of Primary and Secondary Education - 2024 Annual Statistical Report
+          Source:{' '}
+          <a href="https://www.mopse.co.zw/sites/default/files/publications/Annual%20Statistical%20Report%202024.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline underline-offset-4">
+            Ministry of Primary and Secondary Education — Annual Statistical Report 2024
+          </a>
         </p>
 
       </div>

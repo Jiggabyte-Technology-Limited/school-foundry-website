@@ -12,7 +12,8 @@ import {
   FileText,
   ExternalLink,
   Mail,
-  Phone
+  Phone,
+  MessageCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
@@ -22,21 +23,12 @@ const FADE_UP = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const ZambiaFlag = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" className="w-full h-auto shadow-2xl rounded-sm overflow-hidden border border-white/10">
-    <rect width="9" height="6" fill="#198A00"/>
-    <rect x="6" y="3" width="1" height="3" fill="#DE2010"/>
-    <rect x="7" y="3" width="1" height="3" fill="#000000"/>
-    <rect x="8" y="3" width="1" height="3" fill="#EF7D00"/>
-    <path d="M7.5 1.2c-.1 0-.3.1-.4.2l-.2.3c-.1.2-.1.4 0 .6.1.2.3.3.5.3.2 0 .4-.1.5-.3.1-.2.1-.4 0-.6-.1-.2-.2-.3-.4-.5zm.1.8c-.1 0-.2-.1-.2-.2s.1-.2.2-.2.2.1.2.2-.1.2-.2.2zM6.8 2.2c.1-.1.2-.2.4-.2.2 0 .4.1.5.2.1.1.2.3.2.5 0 .2-.1.4-.2.5-.1.1-.3.2-.5.2-.2 0-.4-.1-.5-.2-.1-.1-.2-.3-.2-.5 0-.2.1-.4.3-.5zm.7.8c.1 0 .2-.1.2-.2s-.1-.2-.2-.2-.2.1-.2.2.1.2.2.2z" fill="#EF7D00"/>
-    <path d="M6.2 1.5s.5-.3 1.3-.3 1.3.3 1.3.3l.2.5s-.8-.2-1.5-.2-1.5.2-1.5.2l.2-.5z" fill="#EF7D00"/>
-    <path d="M6.5 1.8s.3-.2.8-.2.8.2.8.2l.1.3s-.4-.1-.9-.1-.9.1-.9.1l.1-.3z" fill="#EF7D00"/>
-  </svg>
-);
+const ZAMBIA_NUMBER = '260570326775';
+const ZAMBIA_DISPLAY = '+260 570 326 775';
 
 const ZambiaMapSilhouette = () => (
   <svg viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-    <path d="M55.7,11.2l-3.2,4.4l-4.9,0.3l-1.7,1l-5.1,0.1L36.4,23l-12.4,5.5l-1.1,4.9l1.4,7l6.5,3.7l4.3-0.3l2.2-4.8l-0.1-2.2l-5.1-2.5l-0.3-5.4l4.4-0.2l1.1,1.8l12.1,5.2l0.4-4l5.7-0.2L55.7,11.2z M85,15.5l-1.5,1.2l-2.1,1.1l-1.8,1.4l-2.1,1.6l-1.7,2.1l-1.8,2.4l-1.5,2.7l-1.8,2.9l-1.3,3.2l-1.4,3.4l-1.1,3.7l-1.2,3.9l-0.8,4.1l-0.9,4.4l-0.6,4.6l-0.6,4.8l-0.3,5.1l-0.3,5.3l-0.1,5.5l0.1,5.7l0.1,5.9l0.3,6.1l0.5,6.3l0.6,6.6l0.8,6.8l1,7.1l1.1,7.3l1.2,7.6l1.4,7.8l1.6,8l1.8,8.2l1.9,8.5l2.1,8.7l2.2,9l2.4,9.2z" />
+    <path d="M55.7,11.2l-3.2,4.4l-4.9,0.3l-1.7,1l-5.1,0.1L36.4,23l-12.4,5.5l-1.1,4.9l1.4,7l6.5,3.7l4.3-0.3l2.2-4.8l-0.1-2.2l-5.1-2.5l-0.3-5.4l4.4-0.2l1.1,1.8l12.1,5.2l0.4-4l5.7-0.2L55.7,11.2z" />
   </svg>
 );
 
@@ -55,7 +47,7 @@ export default function ZambiaCampaignPage() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40 py-12">
 
           <motion.div initial="hidden" animate="visible" variants={FADE_UP}>
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] uppercase tracking-widest group hover:bg-white/10 transition-all">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all">
               <span className="text-lg">🇿🇲</span>
               <span className="border-l border-white/10 pl-3">Source: Ministry of Education 2025 Bulletin</span>
             </div>
@@ -81,7 +73,11 @@ export default function ZambiaCampaignPage() {
             className="relative"
           >
             <div className="relative z-10 transform lg:rotate-3 hover:rotate-0 transition-transform duration-700 w-full max-w-[500px] mx-auto">
-              <ZambiaFlag />
+              <img
+                src="https://flagcdn.com/zm.svg"
+                alt="Flag of Zambia"
+                className="w-full h-auto shadow-2xl rounded-sm overflow-hidden border border-white/10"
+              />
             </div>
             <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-[120px] rounded-full -z-20 animate-pulse" />
@@ -149,7 +145,7 @@ export default function ZambiaCampaignPage() {
             <h4 className="text-xl font-bold text-white mb-1">Official Education Statistics Bulletin 2025</h4>
             <p className="text-white/40 text-sm font-medium">Verified by the Ministry of Education. Access the full report for in-depth regional data.</p>
           </div>
-          <Button variant="outline" className="rounded-xl border-white/10 hover:bg-white/5 gap-2" asChild>
+          <Button variant="outline" className="rounded-xl border-white/10 hover:bg-white/5 gap-2 flex-shrink-0" asChild>
             <a href="https://www.edu.gov.zm/wp-content/uploads/2026/03/2025-ESB-.pdf" target="_blank" rel="noopener noreferrer">
               Open Bulletin <ExternalLink className="w-4 h-4" />
             </a>
@@ -240,19 +236,16 @@ export default function ZambiaCampaignPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-sm">
-            <a
-              href="tel:+260570326775"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
-            >
+            <div className="flex items-center gap-2 px-5 py-3 bg-white/5 text-white rounded-xl font-bold border border-white/10">
               <Phone className="w-4 h-4 text-primary" />
-              Zambia: +260 570 326 775
-            </a>
-            <a
-              href="mailto:info@jiggabyte.co.zm"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10"
-            >
+              Zambia: {ZAMBIA_DISPLAY}
+              <a href={`tel:+${ZAMBIA_NUMBER}`} className="ml-1 p-1 rounded hover:bg-primary/10 hover:text-primary transition-colors" title="Call"><Phone className="w-3.5 h-3.5" /></a>
+              <a href={`https://wa.me/${ZAMBIA_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors" title="WhatsApp"><MessageCircle className="w-3.5 h-3.5" /></a>
+            </div>
+            <a href="mailto:schoolfoundry@jiggabyte.co.zm"
+              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10">
               <Mail className="w-4 h-4 text-primary" />
-              info@jiggabyte.co.zm
+              schoolfoundry@jiggabyte.co.zm
             </a>
           </div>
 
@@ -270,7 +263,10 @@ export default function ZambiaCampaignPage() {
         </motion.div>
 
         <p className="text-center mt-12 text-[10px] uppercase tracking-[0.4em] font-black text-white/20">
-          Source: Ministry of Education - Education Statistics Bulletin 2025
+          Source:{' '}
+          <a href="https://www.edu.gov.zm/wp-content/uploads/2026/03/2025-ESB-.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline underline-offset-4">
+            Ministry of Education — Education Statistics Bulletin 2025
+          </a>
         </p>
 
       </div>

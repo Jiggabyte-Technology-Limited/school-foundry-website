@@ -2,6 +2,11 @@ import React from 'react';
 import { Mail, MapPin, ChevronRight, Phone, MessageCircle } from 'lucide-react';
 import { Link } from 'wouter';
 
+const ZAMBIA_NUMBER = '260570326775';
+const ZAMBIA_DISPLAY = '+260 570 326 775';
+const ZIM_NUMBER = '27696372803';
+const ZIM_DISPLAY = '+27 69 637 2803';
+
 export default function Footer() {
   return (
     <footer className="bg-[#030508] text-white/40 pt-24 pb-12 border-t border-white/5">
@@ -12,40 +17,47 @@ export default function Footer() {
               <img src="/logo.svg" alt="" width={40} height={40} className="h-10 w-auto transition-transform duration-500 group-hover:scale-110" />
               <span className="font-bold text-2xl tracking-tight text-white">School<span className="font-light text-primary group-hover:text-primary/80 transition-colors">Foundry</span></span>
             </Link>
-            <p className="text-white/40 leading-relaxed mb-8 max-sm text-base">
+            <p className="text-white/40 leading-relaxed mb-8 text-base">
               Helping schools ditch the paperwork and run smoother. Built right here in Zambia, for schools that actually need tools that work.
             </p>
-            <div className="flex flex-col gap-4 text-sm font-medium">
-              <a href="mailto:info@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
+            <div className="flex flex-col gap-5 text-sm font-medium">
+              <a href="mailto:schoolfoundry@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
                 <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
-                info@jiggabyte.co.zm
+                schoolfoundry@jiggabyte.co.zm
               </a>
-              <a href="tel:+260570326775" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
-                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
-                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+
+              {[
+                { label: 'Zambia', number: ZAMBIA_NUMBER, display: ZAMBIA_DISPLAY },
+                { label: 'Zimbabwe', number: ZIM_NUMBER, display: ZIM_DISPLAY },
+              ].map(({ label, number, display }) => (
+                <div key={label} className="flex items-center gap-2">
+                  <div className="p-2 rounded-lg bg-white/5 flex-shrink-0">
+                    <Phone className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="flex-1 text-white/40 text-sm">{label}: {display}</span>
+                  <a
+                    href={`tel:+${number}`}
+                    title={`Call ${label}`}
+                    className="p-2 rounded-lg bg-white/5 hover:bg-primary/10 hover:text-primary transition-colors"
+                    aria-label={`Call ${display}`}
+                  >
+                    <Phone className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`https://wa.me/${number}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`WhatsApp ${label}`}
+                    className="p-2 rounded-lg bg-white/5 hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors"
+                    aria-label={`WhatsApp ${display}`}
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
                 </div>
-                Zambia: +260 570 326 775
-              </a>
-              <a href="https://wa.me/260570326775" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
-                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
-                  <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                </div>
-                WhatsApp Zambia
-              </a>
-              <a href="tel:+27696372803" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
-                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
-                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                </div>
-                Zimbabwe: +27 69 637 2803
-              </a>
-              <a href="https://wa.me/27696372803" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
-                <div className="p-2 rounded-lg bg-white/5 transition-colors hover:bg-white/10">
-                  <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                </div>
-                WhatsApp Zimbabwe
-              </a>
+              ))}
+
               <div className="flex items-center gap-3 text-white/40">
                 <div className="p-2 rounded-lg bg-white/5">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
