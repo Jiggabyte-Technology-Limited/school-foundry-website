@@ -25,17 +25,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.0
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build frontend
-        run: npm run build --workspace=@workspace/schoolfoundry
+        run: pnpm --filter @workspace/schoolfoundry build
         env:
           PORT: 3000
           # This automatically determines the base URL dynamically based on your GitHub repository name.

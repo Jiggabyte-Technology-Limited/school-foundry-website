@@ -49,6 +49,7 @@ Thumbs.db
 .local/
 #.migration-backup/
 .turbopack/
+.pnpm-store/
 
 # Next.js
 .next/
