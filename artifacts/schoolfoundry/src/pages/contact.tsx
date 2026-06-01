@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { asset } from '@/lib/asset';
+import { getFormsApiUrl } from '@/lib/forms';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -50,8 +51,7 @@ export default function ContactPage() {
     setFormState('loading');
     setErrorMsg('');
     try {
-      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-      const res = await fetch(`${base}/api/contact`, {
+      const res = await fetch(getFormsApiUrl('/api/contact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

@@ -198,8 +198,8 @@ export default function AboutPage() {
               className="bg-[#0B0D13] overflow-hidden"
             >
               <img
-                src={asset("/file-cabinet.jpg")}
-                alt="Overflowing file cabinet - the paper-based system SchoolFoundry replaces"
+                src={asset("/new-about-us.png")}
+                alt="School staff working through paper receipt books and records"
                 className="w-full h-full object-cover min-h-[300px] hover:scale-105 transition-transform duration-700"
               />
             </motion.div>

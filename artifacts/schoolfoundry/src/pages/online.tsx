@@ -21,8 +21,11 @@ import {
   Construction,
   Monitor,
   Map,
+  AlertCircle,
+  Send,
 } from 'lucide-react';
 import { asset } from '@/lib/asset';
+import { getFormsApiUrl } from '@/lib/forms';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -34,14 +37,59 @@ const STAGGER = {
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
 };
 
+type WaitlistFormState = 'idle' | 'loading' | 'success' | 'error';
+
 export default function CloudPage() {
   const [scrolled, setScrolled] = useState(false);
+  const [waitlistState, setWaitlistState] = useState<WaitlistFormState>('idle');
+  const [waitlistError, setWaitlistError] = useState('');
+  const [waitlistForm, setWaitlistForm] = useState({
+    name: '',
+    email: '',
+    school: '',
+  });
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const setWaitlistField = (field: keyof typeof waitlistForm) =>
+    (event: React.ChangeEvent<HTMLInputElement>) =>
+      setWaitlistForm((current) => ({ ...current, [field]: event.target.value }));
+
+  const handleWaitlistSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setWaitlistState('loading');
+    setWaitlistError('');
+
+    try {
+      const response = await fetch(getFormsApiUrl('/api/waitlist'), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(waitlistForm),
+      });
+
+      const payload = await response.json() as { ok?: boolean; error?: string };
+
+      if (!response.ok) {
+        throw new Error(payload.error || 'Something went wrong');
+      }
+
+      setWaitlistForm({
+        name: '',
+        email: '',
+        school: '',
+      });
+      setWaitlistState('success');
+    } catch (error) {
+      setWaitlistError(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
+      setWaitlistState('error');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#07090E] selection:bg-primary/30 selection:text-white overflow-x-hidden">
@@ -343,21 +391,84 @@ export default function CloudPage() {
               </div>
             </div>
 
-            <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col items-center justify-center text-center">
-              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6">
-                <Globe className="w-8 h-8 text-blue-400" />
+            <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                  <Globe className="w-8 h-8 text-blue-400" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-1">The Cloud Version</h4>
+                  <p className="text-[13px] text-white/50 leading-relaxed max-w-sm">
+                    Join the waitlist to be first in line when the cloud platform launches.
+                  </p>
+                </div>
               </div>
-              <h4 className="text-xl font-bold text-white mb-3">The Cloud Version</h4>
-              <p className="text-[13px] text-white/50 mb-6 max-w-sm leading-relaxed">
-                We're building the next generation of school management for Southern Africa. Join the waitlist to be the first to know when it launches.
-              </p>
-              <a
-                href="/#contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-500 text-white rounded-2xl font-bold text-base hover:bg-blue-600 transition-all shadow-[0_20px_40px_-12px_rgba(59,130,246,0.4)]"
-              >
-                Join the Waitlist
-                <ArrowRight className="w-4 h-4" />
-              </a>
+
+              <form className="space-y-4" onSubmit={handleWaitlistSubmit}>
+                {waitlistState === 'success' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-left">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                    You are on the waitlist. We will contact you when early access opens.
+                  </div>
+                )}
+
+                {waitlistState === 'error' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-left">
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    {waitlistError}
+                  </div>
+                )}
+
+                <div className="space-y-1.5">
+                  <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Your Name</label>
+                  <input
+                    value={waitlistForm.name}
+                    onChange={setWaitlistField('name')}
+                    className="w-full bg-white/5 border border-white/10 text-white h-12 rounded-xl px-4 focus:outline-none focus:border-blue-400/60 transition-all placeholder:text-white/15"
+                    placeholder="e.g. Themba Moyo"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Email Address</label>
+                  <input
+                    required
+                    type="email"
+                    value={waitlistForm.email}
+                    onChange={setWaitlistField('email')}
+                    className="w-full bg-white/5 border border-white/10 text-white h-12 rounded-xl px-4 focus:outline-none focus:border-blue-400/60 transition-all placeholder:text-white/15"
+                    placeholder="you@school.org"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">School Name</label>
+                  <input
+                    value={waitlistForm.school}
+                    onChange={setWaitlistField('school')}
+                    className="w-full bg-white/5 border border-white/10 text-white h-12 rounded-xl px-4 focus:outline-none focus:border-blue-400/60 transition-all placeholder:text-white/15"
+                    placeholder="Optional"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={waitlistState === 'loading'}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-500 text-white rounded-2xl font-bold text-base hover:bg-blue-600 transition-all shadow-[0_20px_40px_-12px_rgba(59,130,246,0.4)] disabled:opacity-60 disabled:cursor-not-allowed w-full"
+                >
+                  {waitlistState === 'loading' ? (
+                    <>
+                      <span className="inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                      Joining...
+                    </>
+                  ) : (
+                    <>
+                      Join the Waitlist
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
 
           </div>

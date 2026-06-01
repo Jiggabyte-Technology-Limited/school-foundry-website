@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useMotionTemplate } from 'framer-motion';
 import DatabaseSphere from '@/components/DatabaseSphere';
 import {
@@ -20,13 +20,17 @@ import {
   Monitor,
   ShieldCheck,
   WifiOff,
-  Banknote
+  Banknote,
+  AlertCircle,
+  CheckCircle2,
+  Send,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from 'wouter';
 import { asset } from '@/lib/asset';
+import { getFormsApiUrl } from '@/lib/forms';
 
 const FADE_UP = {
   hidden: { opacity: 0, y: 32 },
@@ -37,6 +41,8 @@ const STAGGER = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
 };
+
+type DemoFormState = 'idle' | 'loading' | 'success' | 'error';
 
 function ScrollSection({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
   const ref = useRef<HTMLElement>(null);
@@ -56,6 +62,53 @@ function ScrollSection({ children, className, id }: { children: React.ReactNode;
 }
 
 export default function Home() {
+  const [demoState, setDemoState] = useState<DemoFormState>('idle');
+  const [demoError, setDemoError] = useState('');
+  const [demoForm, setDemoForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    school: '',
+    message: '',
+  });
+  const setDemoField = (field: keyof typeof demoForm) =>
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setDemoForm((current) => ({ ...current, [field]: event.target.value }));
+
+  const handleDemoSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setDemoState('loading');
+    setDemoError('');
+
+    try {
+      const response = await fetch(getFormsApiUrl('/api/demo'), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(demoForm),
+      });
+
+      const payload = await response.json() as { ok?: boolean; error?: string };
+
+      if (!response.ok) {
+        throw new Error(payload.error || 'Something went wrong');
+      }
+
+      setDemoForm({
+        name: '',
+        email: '',
+        phone: '',
+        school: '',
+        message: '',
+      });
+      setDemoState('success');
+    } catch (error) {
+      setDemoError(error instanceof Error ? error.message : 'Something went wrong. Please try again.');
+      setDemoState('error');
+    }
+  };
+
   return (
     <div className="selection:bg-primary/30 selection:text-white overflow-x-hidden">
 
@@ -433,33 +486,93 @@ export default function Home() {
             </div>
 
             <div className="bg-[#07090E] p-7 sm:p-10">
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-5" onSubmit={handleDemoSubmit}>
+                {demoState === 'success' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm">
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+                    Demo request sent. We’ll get back to you within 24 hours.
+                  </div>
+                )}
+
+                {demoState === 'error' && (
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    {demoError}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">School Name</label>
-                    <Input data-testid="input-school-name" className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15" placeholder="e.g. Riverside High School" />
+                    <Input
+                      data-testid="input-school-name"
+                      value={demoForm.school}
+                      onChange={setDemoField('school')}
+                      className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15"
+                      placeholder="e.g. Riverside High School"
+                    />
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Your Name</label>
-                    <Input data-testid="input-your-name" className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15" placeholder="e.g. Themba Moyo" />
+                    <Input
+                      data-testid="input-your-name"
+                      value={demoForm.name}
+                      onChange={setDemoField('name')}
+                      className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15"
+                      placeholder="e.g. Themba Moyo"
+                    />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Email Address</label>
-                    <Input data-testid="input-email" type="email" className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15" placeholder="bursar@yourschool.com" />
+                    <Input
+                      data-testid="input-email"
+                      type="email"
+                      value={demoForm.email}
+                      onChange={setDemoField('email')}
+                      className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15"
+                      placeholder="bursar@yourschool.com"
+                    />
                   </div>
                   <div className="space-y-1.5">
                     <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">Phone Number</label>
-                    <Input data-testid="input-phone" className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15" placeholder="Best number to reach you on" />
+                    <Input
+                      data-testid="input-phone"
+                      value={demoForm.phone}
+                      onChange={setDemoField('phone')}
+                      className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-primary transition-all placeholder:text-white/15"
+                      placeholder="Best number to reach you on"
+                    />
                   </div>
                 </div>
                 <div className="space-y-1.5">
                   <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest">How can we help?</label>
-                  <Textarea data-testid="textarea-school-info" className="bg-white/5 border-white/10 text-white min-h-[100px] rounded-xl focus:border-primary transition-all resize-none placeholder:text-white/15" placeholder="Tell us a little about your school, how many students do you have?" />
+                  <Textarea
+                    data-testid="textarea-school-info"
+                    value={demoForm.message}
+                    onChange={setDemoField('message')}
+                    className="bg-white/5 border-white/10 text-white min-h-[100px] rounded-xl focus:border-primary transition-all resize-none placeholder:text-white/15"
+                    placeholder="Tell us a little about your school, how many students do you have?"
+                  />
                 </div>
-                <Button data-testid="button-submit-demo" className="w-full h-14 text-base font-bold rounded-xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
-                  Request a Friendly Demo
+                <Button
+                  data-testid="button-submit-demo"
+                  type="submit"
+                  disabled={demoState === 'loading'}
+                  className="w-full h-14 text-base font-bold rounded-xl bg-primary text-white hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {demoState === 'loading' ? (
+                    <>
+                      <span className="mr-2 inline-flex h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Request a Friendly Demo
+                    </>
+                  )}
                 </Button>
               </form>
             </div>

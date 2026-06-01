@@ -1,15 +1,15 @@
 import { Router, type IRouter } from "express";
-import { ContactSubmissionRequest } from "@workspace/api-zod";
+import { DemoSubmissionRequest } from "@workspace/api-zod";
 import { deliverSubmissionEmail } from "../lib/submissions";
 
 const router: IRouter = Router();
 
-router.post("/contact", async (req, res) => {
-  const parsed = ContactSubmissionRequest.safeParse(req.body);
+router.post("/demo", async (req, res) => {
+  const parsed = DemoSubmissionRequest.safeParse(req.body);
 
   if (!parsed.success) {
     res.status(400).json({
-      error: parsed.error.issues[0]?.message || "Invalid contact request",
+      error: parsed.error.issues[0]?.message || "Invalid demo request",
     });
     return;
   }
@@ -18,9 +18,9 @@ router.post("/contact", async (req, res) => {
 
   try {
     const result = await deliverSubmissionEmail({
-      source: "contact",
-      subject: `New contact from ${name}${school ? ` (${school})` : ""}`,
-      heading: "New Message - SchoolFoundry",
+      source: "demo",
+      subject: `New demo request from ${name}${school ? ` (${school})` : ""}`,
+      heading: "New Demo Request - SchoolFoundry",
       replyTo: email,
       fields: [
         { label: "Name", value: name },

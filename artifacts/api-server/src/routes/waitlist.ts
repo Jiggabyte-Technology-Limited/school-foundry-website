@@ -1,34 +1,32 @@
 import { Router, type IRouter } from "express";
-import { ContactSubmissionRequest } from "@workspace/api-zod";
+import { WaitlistSubmissionRequest } from "@workspace/api-zod";
 import { deliverSubmissionEmail } from "../lib/submissions";
 
 const router: IRouter = Router();
 
-router.post("/contact", async (req, res) => {
-  const parsed = ContactSubmissionRequest.safeParse(req.body);
+router.post("/waitlist", async (req, res) => {
+  const parsed = WaitlistSubmissionRequest.safeParse(req.body);
 
   if (!parsed.success) {
     res.status(400).json({
-      error: parsed.error.issues[0]?.message || "Invalid contact request",
+      error: parsed.error.issues[0]?.message || "Invalid waitlist request",
     });
     return;
   }
 
-  const { name, email, phone, school, message } = parsed.data;
+  const { name, email, school } = parsed.data;
 
   try {
     const result = await deliverSubmissionEmail({
-      source: "contact",
-      subject: `New contact from ${name}${school ? ` (${school})` : ""}`,
-      heading: "New Message - SchoolFoundry",
+      source: "waitlist",
+      subject: `New waitlist signup from ${email}`,
+      heading: "New Waitlist Signup - SchoolFoundry",
       replyTo: email,
       fields: [
-        { label: "Name", value: name },
         { label: "Email", value: email },
-        ...(phone ? [{ label: "Phone", value: phone }] : []),
+        ...(name ? [{ label: "Name", value: name }] : []),
         ...(school ? [{ label: "School", value: school }] : []),
       ],
-      message,
     });
 
     res.status(200).json(result);

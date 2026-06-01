@@ -103,8 +103,8 @@ export default function WorkWithUsPage() {
 
             <div className="bg-[#0B0D13] overflow-hidden">
               <img
-                src={asset("/file-cabinet.jpg")}
-                alt="Paper-based school filing systems in Southern Africa"
+                src={asset("/new-work-with-us.png")}
+                alt="School administrator working through receipt books and records"
                 className="w-full h-full object-cover min-h-[300px]"
               />
             </div>

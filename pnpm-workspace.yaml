@@ -1,5 +1,6 @@
 packages:
   - 'artifacts/schoolfoundry'
+  - 'artifacts/api-server'
   - 'artifacts/mockup-sandbox'
   - 'lib/api-client-react'
   - 'lib/api-spec'

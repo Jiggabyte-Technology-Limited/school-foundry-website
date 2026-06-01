@@ -158,6 +158,12 @@ For custom styles, modify the CSS in `artifacts/schoolfoundry/src/index.css`
 
 The project automatically deploys to GitHub Pages when you push changes. Follow these steps:
 
+### Forms Backend
+
+The contact, demo, and waitlist submissions are handled by the API server in `artifacts/api-server/`.
+
+If you deploy that API server on Vercel separately from the GitHub Pages frontend, set `VITE_FORMS_API_BASE_URL` in the GitHub Actions workflow to the Vercel project URL so the frontend can reach it.
+
 ### Step 1: Create a Feature Branch (Recommended)
 
 ```bash

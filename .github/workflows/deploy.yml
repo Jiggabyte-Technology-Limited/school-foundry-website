@@ -43,6 +43,7 @@ jobs:
         run: pnpm --filter @workspace/schoolfoundry build
         env:
           PORT: 3000
+          VITE_FORMS_API_BASE_URL: ${{ vars.VITE_FORMS_API_BASE_URL }}
           # This automatically determines the base URL dynamically based on your GitHub repository name.
           # e.g., if hosted at https://<username>.github.io/<repo-name>/, BASE_PATH is /<repo-name>/.
           # If you use a custom apex domain, you can change this to '/'
