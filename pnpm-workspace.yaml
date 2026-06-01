@@ -6,3 +6,6 @@ packages:
   - 'lib/api-zod'
   - 'lib/db'
   - 'scripts'
+
+allowBuilds:
+  esbuild: true
