@@ -94,7 +94,7 @@ export default function CloudPage() {
   return (
     <div className="min-h-screen bg-[#07090E] selection:bg-primary/30 selection:text-white overflow-x-hidden">
 
-      <div className={`fixed left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-blue-500 to-primary py-2.5 text-center transition-all duration-500 ease-in-out ${scrolled ? 'top-[80px] sm:top-[76px]' : 'top-[84px] sm:top-[96px]'}`}>
+      <div className={`fixed left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-blue-500 to-primary py-2.5 text-center transition-all duration-500 ease-in-out ${scrolled ? 'top-[92px]' : 'top-[69px]'}`}>
         <div className="container mx-auto px-4 flex items-center justify-center gap-2 text-white text-sm font-bold">
           <Construction className="w-4 h-4" />
           <span>Cloud Version - Coming Soon</span>

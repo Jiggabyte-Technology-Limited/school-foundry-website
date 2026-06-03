@@ -4,7 +4,6 @@ export type CustomFetchOptions = RequestInit & {
 
 export type ErrorType<T = unknown> = ApiError<T>;
 
-export type BodyType<T> = T;
 
 export type AuthTokenGetter = () => Promise<string | null> | string | null;
 
@@ -163,15 +162,11 @@ function buildErrorMessage(response: Response, data: unknown): string {
     getStringField(data, "error_description") ??
     getStringField(data, "error");
 
-  if (title && detail) return `${prefix}: ${title} — ${detail}`;
-  if (detail) return `${prefix}: ${detail}`;
-  if (message) return `${prefix}: ${message}`;
-  if (title) return `${prefix}: ${title}`;
-
-  return prefix;
+  const combined = title && detail ? `${title} — ${detail}` : message ?? detail ?? title;
+  return combined ? `${prefix}: ${combined}` : prefix;
 }
 
-export class ApiError<T = unknown> extends Error {
+class ApiError<T = unknown> extends Error {
   readonly name = "ApiError";
   readonly status: number;
   readonly statusText: string;
@@ -199,7 +194,7 @@ export class ApiError<T = unknown> extends Error {
   }
 }
 
-export class ResponseParseError extends Error {
+class ResponseParseError extends Error {
   readonly name = "ResponseParseError";
   readonly status: number;
   readonly statusText: string;
@@ -369,3 +364,14 @@ export async function customFetch<T = unknown>(
 
   return (await parseSuccessBody(response, responseType, requestInfo)) as T;
 }
+
+// Export internal helpers for unit testing
+export {
+  applyBaseUrl,
+  isTextMediaType,
+  hasNoBody,
+  getStringField,
+  buildErrorMessage,
+  parseErrorBody,
+  parseSuccessBody,
+};
