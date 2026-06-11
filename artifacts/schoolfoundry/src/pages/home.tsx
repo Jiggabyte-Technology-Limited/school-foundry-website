@@ -24,6 +24,7 @@ import {
   AlertCircle,
   CheckCircle2,
   Send,
+  Handshake,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -440,6 +441,46 @@ export default function Home() {
           <div className="mt-6 px-5 py-4 bg-white/[0.03] rounded-xl flex items-center gap-4 text-[13px] text-white/50">
             <Info className="w-4 h-4 text-primary flex-shrink-0" />
             <span><strong className="text-white/70 font-medium">Full Suite:</strong> Student records, admissions, attendance, gradebook, finance, and staff/parent access are included. Payments supported via WhatsApp, bank cards, M-Pesa, EcoCash, and Momo.</span>
+          </div>
+        </div>
+      </ScrollSection>
+
+      <ScrollSection className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 to-orange-500/5">
+        <div className="container mx-auto px-6">
+          <div className="mb-12">
+            <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">How We Work</p>
+            <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[520px] tracking-tight">
+              Built on <span className="text-primary">Trust.</span>
+            </h3>
+            <p className="text-[15px] text-white/50 max-w-[520px] leading-[1.65]">
+              SchoolFoundry is more than software. We're a partner committed to your school's success, built on trust, professionalism, and honest communication.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Users className="w-[18px] h-[18px] text-primary" />
+              </div>
+              <p className="font-bold text-[15px] text-white mb-1">Referral-Based Growth</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">We grow through trusted relationships and referrals, not aggressive sales tactics. Every school we work with becomes an advocate.</p>
+            </div>
+
+            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <ShieldCheck className="w-[18px] h-[18px] text-primary" />
+              </div>
+              <p className="font-bold text-[15px] text-white mb-1">Your Data, Your Control</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">All data stays on your school's computer. No cloud lock-in. No surprise fees. You own your information.</p>
+            </div>
+
+            <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <Handshake className="w-[18px] h-[18px] text-primary" />
+              </div>
+              <p className="font-bold text-[15px] text-white mb-1">Lifetime Partnership</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">One payment, lifetime access. We're here to support you for as long as you need us, with no expiration dates.</p>
+            </div>
           </div>
         </div>
       </ScrollSection>
