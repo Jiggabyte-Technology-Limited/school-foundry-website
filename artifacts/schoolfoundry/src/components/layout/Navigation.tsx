@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Offline Bundle', href: '/offline' },
   { label: 'Cloud Version', href: '/online' },
   { label: 'Work With Us', href: '/work-with-us' },
+  { label: 'Become an Agent', href: '/agents' },
   { label: 'Contact', href: '/contact' },
 ];
 

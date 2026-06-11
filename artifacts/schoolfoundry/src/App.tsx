@@ -11,6 +11,7 @@ import OnlinePage from "@/pages/online";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
 import WorkWithUsPage from "@/pages/work-with-us";
+import AgentsPage from "@/pages/agents";
 import LegalPage from "@/pages/legal";
 import ZambiaCampaignPage from "@/pages/campaigns/zambia";
 import ZimbabweCampaignPage from "@/pages/campaigns/zimbabwe";
@@ -29,6 +30,7 @@ function Router() {
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/work-with-us" component={WorkWithUsPage} />
+          <Route path="/agents" component={AgentsPage} />
           <Route path="/legal" component={LegalPage} />
           <Route path="/campaigns/zambia" component={ZambiaCampaignPage} />
           <Route path="/campaigns/zimbabwe" component={ZimbabweCampaignPage} />
