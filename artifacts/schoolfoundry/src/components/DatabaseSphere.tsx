@@ -12,15 +12,16 @@ export default function DatabaseSphere() {
 
     let renderer: THREE.WebGLRenderer | null = null;
     let animId: number;
+    let cleanup: (() => void) | undefined;
     const dotGeometry = new THREE.BufferGeometry();
     const dotMaterial = new THREE.PointsMaterial({
-      color: 0xff7a00,
-      size: 0.08,
+      color: 0xea580c,
+      size: 0.09,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 1.0,
+      opacity: 0.9,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
     });
 
     try {
@@ -41,7 +42,7 @@ export default function DatabaseSphere() {
       camera.position.y = 2;
       camera.lookAt(0, 0, 0);
 
-      scene.fog = new THREE.Fog(0x0d0d0f, camera.position.z - 2, camera.position.z + 4);
+      scene.fog = new THREE.Fog(0xf8fafc, camera.position.z - 2, camera.position.z + 6);
 
       const dbGroup = new THREE.Group();
       scene.add(dbGroup);
@@ -173,7 +174,7 @@ export default function DatabaseSphere() {
         camera.aspect = w / h;
         const mobile = window.innerWidth < 768;
         camera.position.z = mobile ? 22 : 16;
-        scene.fog = new THREE.Fog(0x0d0d0f, camera.position.z - 2, camera.position.z + 4);
+        scene.fog = new THREE.Fog(0xf8fafc, camera.position.z - 2, camera.position.z + 6);
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
         windowHalfX = window.innerWidth / 2;
@@ -181,7 +182,7 @@ export default function DatabaseSphere() {
       };
       window.addEventListener('resize', onResize);
 
-      return () => {
+      cleanup = () => {
         cancelAnimationFrame(animId);
         document.removeEventListener('mousemove', onMouseMove);
         document.removeEventListener('touchmove', onTouchMove);
@@ -199,6 +200,10 @@ export default function DatabaseSphere() {
         try { renderer.dispose(); } catch (_e2) { /* ignore */ }
       }
     }
+
+    return () => {
+      if (cleanup) cleanup();
+    };
   }, []);
 
   if (failed) {

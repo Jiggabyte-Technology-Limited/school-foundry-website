@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import {
   BarChart3,
@@ -35,32 +35,32 @@ const ZambiaMapSilhouette = () => (
 
 export default function ZambiaCampaignPage() {
   return (
-    <div className="min-h-screen bg-[#07090E] pt-32 pb-24 selection:bg-primary/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#fff8f1] pt-32 pb-24 tracking-[0.015em] selection:bg-[#fee3b5] selection:text-[#fa5d00] overflow-x-hidden text-[#1d1e1c]">
 
-      <div className="container mx-auto px-6 max-w-6xl relative">
+      <div className="max-w-[1200px] mx-auto px-6 relative">
 
-        <div className="absolute top-0 right-[-10%] w-[900px] h-[900px] pointer-events-none text-[#198A00] opacity-5 blur-sm overflow-hidden">
+        <div className="absolute top-0 right-[-10%] w-[900px] h-[900px] pointer-events-none text-[#fa5d00] opacity-5 blur-sm overflow-hidden">
           <div className="transform rotate-12 scale-150">
             <ZambiaMapSilhouette />
           </div>
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40 py-12">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32 py-8">
 
           <motion.div initial="hidden" animate="visible" variants={FADE_UP}>
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white border border-[#c0bbb6]/40 text-[#fa5d00] mb-8 font-mono text-[10px] uppercase tracking-widest shadow-xs">
               <span className="text-lg">🇿🇲</span>
-              <span className="border-l border-white/10 pl-3">Source: Ministry of Education 2025 Bulletin</span>
+              <span className="border-l border-[#d9d9d9] pl-3 font-semibold text-[#615f5c]">Source: Ministry of Education 2025 Bulletin</span>
             </div>
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-              Empowering <span className="text-[#EF7D00]">13,987</span> <br/>
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#1d1e1c] mb-8 tracking-tight leading-[0.9]">
+              Empowering <span className="text-[#fa5d00]">13,987</span> <br/>
               Zambian Schools.
             </h1>
-            <p className="text-xl text-white/50 max-w-xl font-medium leading-relaxed mb-10">
+            <p className="text-xl text-[#615f5c] max-w-xl font-medium leading-relaxed mb-10">
               Under Zambia's Free Education Policy and expanded CDF bursaries, classroom enrollments have surged. School Foundry delivers the 100% offline infrastructure to safeguard sponsored learners and manage school finances with zero internet dependency.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/20" asChild>
+              <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-semibold bg-[#fa5d00] hover:bg-[#e05300] text-white shadow-[rgba(0,0,0,0.2)_0px_1px_4px_0px] hover:shadow-[rgba(250,166,0,0.35)_0px_4px_16px_0px]" asChild>
                 <Link href="/contact">Request a Private Demo</Link>
               </Button>
             </div>
@@ -76,11 +76,11 @@ export default function ZambiaCampaignPage() {
               <img
                 src="https://flagcdn.com/zm.svg"
                 alt="Flag of Zambia"
-                className="w-full h-auto shadow-2xl rounded-sm overflow-hidden border border-white/10"
+                className="w-full h-auto shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px] rounded-[20px] overflow-hidden border border-[#d9d9d9]"
               />
             </div>
-            <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 blur-[120px] rounded-full -z-20 animate-pulse" />
+            <div className="absolute inset-0 bg-[#fa5d00]/10 blur-[100px] rounded-full -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[#fee3b5]/30 blur-[120px] rounded-full -z-20" />
           </motion.div>
 
         </div>
@@ -92,7 +92,7 @@ export default function ZambiaCampaignPage() {
               value: '13,987',
               sub: 'Primary & Secondary',
               icon: Map,
-              color: 'text-primary',
+              color: 'text-[#fa5d00]',
               desc: 'A network of 11,728 Primary and 2,259 Secondary schools nationwide.'
             },
             {
@@ -100,7 +100,7 @@ export default function ZambiaCampaignPage() {
               value: '53,001',
               sub: 'Computers & Tablets',
               icon: Monitor,
-              color: 'text-primary',
+              color: 'text-[#fa5d00]',
               desc: 'Over 35,000 desktops and 11,000 laptops in school offices.'
             },
             {
@@ -108,7 +108,7 @@ export default function ZambiaCampaignPage() {
               value: '100%',
               sub: 'CDF & Bursary Shield',
               icon: ShieldCheck,
-              color: 'text-emerald-400',
+              color: 'text-[#fa5d00]',
               desc: 'Guaranteed protection for sponsored learners from fee lockouts and exam exclusion.'
             },
             {
@@ -116,7 +116,7 @@ export default function ZambiaCampaignPage() {
               value: '9,160+',
               sub: 'Grid, Solar & Gen',
               icon: Zap,
-              color: 'text-primary',
+              color: 'text-[#fa5d00]',
               desc: 'Ready for 100% offline standalone desktop accounting.'
             }
           ].map((stat, i) => (
@@ -126,16 +126,15 @@ export default function ZambiaCampaignPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/[0.02] border border-white/5 rounded-[2rem] p-8 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden"
+              className="bg-white border border-[#c0bbb6]/40 rounded-[20px] p-8 shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px] hover:shadow-[rgba(250,166,0,0.35)_8px_6px_32px_0px] transition-all duration-300 group relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors" />
-              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-[#fee3b5] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <stat.icon className={`w-6 h-6 ${stat.color}`} />
               </div>
-              <p className="text-[10px] uppercase tracking-[0.2em] font-black text-white/30 mb-2">{stat.label}</p>
-              <h3 className="text-4xl font-black text-white mb-2 tracking-tighter">{stat.value}</h3>
+              <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#8e8b87] mb-2">{stat.label}</p>
+              <h3 className="text-4xl font-bold text-[#1d1e1c] mb-2 tracking-tight font-mono">{stat.value}</h3>
               <p className={`${stat.color} font-bold text-sm mb-4`}>{stat.sub}</p>
-              <p className="text-white/40 text-xs leading-relaxed font-medium">{stat.desc}</p>
+              <p className="text-[#615f5c] text-xs leading-relaxed font-medium">{stat.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -144,52 +143,52 @@ export default function ZambiaCampaignPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-32 p-8 rounded-3xl bg-white/[0.02] border border-white/5 flex flex-col md:flex-row items-center gap-8 group hover:bg-white/[0.04] transition-all"
+          className="mb-32 p-8 rounded-[20px] bg-white border border-[#c0bbb6]/40 shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px] flex flex-col md:flex-row items-center gap-8 group hover:shadow-[rgba(250,166,0,0.35)_8px_6px_32px_0px] transition-all"
         >
-          <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-            <FileText className="w-8 h-8 text-primary" />
+          <div className="w-16 h-16 rounded-2xl bg-[#fee3b5] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-[#fa5d00]">
+            <FileText className="w-8 h-8" />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h4 className="text-xl font-bold text-white mb-1">Official Education Statistics Bulletin 2025</h4>
-            <p className="text-white/40 text-sm font-medium">Verified by the Ministry of Education. Access the full report for in-depth regional data.</p>
+            <h4 className="text-xl font-bold text-[#1d1e1c] mb-1">Official Education Statistics Bulletin 2025</h4>
+            <p className="text-[#615f5c] text-sm font-medium">Verified by the Ministry of Education. Access the full report for in-depth regional data.</p>
           </div>
-          <Button variant="outline" className="rounded-xl border-white/10 hover:bg-white/5 gap-2 flex-shrink-0" asChild>
+          <Button variant="outline" className="rounded-2xl border-[#c0bbb6] text-[#1d1e1c] hover:bg-[#fff8f1] hover:border-[#fa5d00] hover:text-[#fa5d00] gap-2 flex-shrink-0" asChild>
             <a href="https://www.edu.gov.zm/wp-content/uploads/2026/03/2025-ESB-.pdf" target="_blank" rel="noopener noreferrer">
               Open Bulletin <ExternalLink className="w-4 h-4" />
             </a>
           </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl font-black text-white mb-8 tracking-tighter leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#1d1e1c] mb-8 tracking-tight leading-tight">
               Bridging the gap between <br/>
-              <span className="text-primary text-3xl sm:text-4xl uppercase tracking-widest opacity-80">Rural & Urban</span>
+              <span className="text-[#fa5d00] text-3xl sm:text-4xl uppercase tracking-widest">Rural &amp; Urban</span>
             </h2>
-            <div className="space-y-10">
-              <div className="group">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-2 rounded-lg bg-[#198A00]/10 border border-[#198A00]/20">
-                    <Globe className="w-5 h-5 text-[#198A00]" />
+            <div className="space-y-8">
+              <div className="bg-white border border-[#c0bbb6]/40 rounded-[20px] p-6 shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px]">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="p-2.5 rounded-xl bg-[#fee3b5] text-[#fa5d00]">
+                    <Globe className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xl font-bold text-white">The Urban Demand</h4>
+                  <h4 className="text-xl font-bold text-[#1d1e1c]">The Urban Demand</h4>
                 </div>
-                <p className="text-white/50 leading-relaxed font-medium">
+                <p className="text-[#615f5c] leading-relaxed font-medium text-sm">
                   With 3,523 Urban schools (led by Lusaka and Copperbelt), the need for <strong>Online Cloud</strong> sync and parent communication via WhatsApp has never been higher.
                 </p>
               </div>
-              <div className="group">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-2 rounded-lg bg-[#EF7D00]/10 border border-[#EF7D00]/20">
-                    <TrendingUp className="w-5 h-5 text-[#EF7D00]" />
+              <div className="bg-white border border-[#c0bbb6]/40 rounded-[20px] p-6 shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px]">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="p-2.5 rounded-xl bg-[#fee3b5] text-[#fa5d00]">
+                    <TrendingUp className="w-5 h-5" />
                   </div>
-                  <h4 className="text-xl font-bold text-white">The Rural Potential</h4>
+                  <h4 className="text-xl font-bold text-[#1d1e1c]">The Rural Potential</h4>
                 </div>
-                <p className="text-white/50 leading-relaxed font-medium">
+                <p className="text-[#615f5c] leading-relaxed font-medium text-sm">
                   Zambia's 7,995 Rural and 2,469 Remote schools are no longer "left behind." With our <strong>Offline Bundle</strong>, a school in Muchinga or Luapula can run a professional office with zero internet.
                 </p>
               </div>
@@ -200,26 +199,26 @@ export default function ZambiaCampaignPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-primary/5 border border-primary/10 rounded-[3rem] p-12 relative overflow-hidden backdrop-blur-3xl"
+            className="bg-white border border-[#c0bbb6]/40 rounded-[20px] p-10 sm:p-12 relative overflow-hidden shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px]"
           >
-            <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
-              <Award className="w-64 h-64 text-primary" />
+            <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none text-[#fa5d00]">
+              <Award className="w-64 h-64" />
             </div>
-            <h4 className="text-3xl font-black mb-10 text-white tracking-tight">2025 Regional Target</h4>
-            <div className="space-y-8 relative z-10">
+            <h4 className="text-3xl font-bold mb-8 text-[#1d1e1c] tracking-tight">2025 Regional Target</h4>
+            <div className="space-y-6 relative z-10">
               {[
                 { label: 'Lusaka Province', value: '1,524 Schools' },
                 { label: 'Copperbelt Province', value: '1,472 Schools' },
                 { label: 'Southern Province', value: '1,831 Schools' },
                 { label: 'Western Province', value: '1,611 Schools' },
               ].map(({ label, value }, idx) => (
-                <div key={idx} className="flex justify-between items-end border-b border-white/5 pb-4 group">
-                  <p className="text-white/40 font-bold group-hover:text-white transition-colors">{label}</p>
-                  <p className="text-white font-mono font-black text-xl">{value}</p>
+                <div key={idx} className="flex justify-between items-end border-b border-[#d9d9d9] pb-3 group">
+                  <p className="text-[#615f5c] font-semibold group-hover:text-[#fa5d00] transition-colors">{label}</p>
+                  <p className="text-[#1d1e1c] font-mono font-bold text-xl">{value}</p>
                 </div>
               ))}
-              <div className="pt-6">
-                <p className="text-sm text-primary font-bold italic">"Clear school records are now essential for strong regional education."</p>
+              <div className="pt-4">
+                <p className="text-sm text-[#fa5d00] font-bold italic">"Clear school records are now essential for strong regional education."</p>
               </div>
             </div>
           </motion.div>
@@ -229,50 +228,43 @@ export default function ZambiaCampaignPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white/[0.03] border border-white/5 rounded-[3rem] p-16 text-center relative overflow-hidden group"
+          className="bg-white border border-[#c0bbb6]/40 rounded-[20px] p-12 sm:p-16 text-center relative overflow-hidden shadow-[rgba(250,166,0,0.25)_6px_4px_24px_0px]"
         >
-          <div className="absolute bottom-0 right-0 w-24 h-full flex opacity-10 pointer-events-none">
-            <div className="flex-1 bg-[#198A00]" />
-            <div className="w-4 bg-[#DE2010]" />
-            <div className="w-4 bg-black" />
-            <div className="w-4 bg-[#EF7D00]" />
-          </div>
-
-          <h3 className="text-3xl sm:text-5xl font-black text-white mb-8 tracking-tighter text-balance">Ready to move your Zambian school away from paper?</h3>
-          <p className="text-xl text-white/40 max-w-2xl mx-auto mb-8 font-medium">
+          <h3 className="text-3xl sm:text-5xl font-bold text-[#1d1e1c] mb-6 tracking-tight text-balance">Ready to move your Zambian school away from paper?</h3>
+          <p className="text-lg sm:text-xl text-[#615f5c] max-w-2xl mx-auto mb-8 font-medium">
             Join the 2025 Digital Transformation wave. Whether you need a local thermal printer bundle or a cloud-based SMS, we have the Zambian solution.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 text-sm">
-            <div className="flex items-center gap-2 px-5 py-3 bg-white/5 text-white rounded-xl font-bold border border-white/10">
-              <Phone className="w-4 h-4 text-primary" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 text-sm">
+            <div className="flex items-center gap-2 px-5 py-3 bg-[#fff8f1] text-[#1d1e1c] rounded-2xl font-bold border border-[#c0bbb6] shadow-xs">
+              <Phone className="w-4 h-4 text-[#fa5d00]" />
               Zambia: {ZAMBIA_DISPLAY}
-              <a href={`tel:+${ZAMBIA_NUMBER}`} className="ml-1 p-1 rounded hover:bg-primary/10 hover:text-primary transition-colors" title="Call"><Phone className="w-3.5 h-3.5" /></a>
-              <a href={`https://wa.me/${ZAMBIA_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#25D366]/20 hover:text-[#25D366] transition-colors" title="WhatsApp"><WhatsAppIcon className="w-3.5 h-3.5" /></a>
+              <a href={`tel:+${ZAMBIA_NUMBER}`} className="ml-1 p-1 rounded hover:bg-[#fee3b5] hover:text-[#fa5d00] transition-colors" title="Call"><Phone className="w-3.5 h-3.5" /></a>
+              <a href={`https://wa.me/${ZAMBIA_NUMBER}`} target="_blank" rel="noopener noreferrer" className="p-1 rounded hover:bg-[#fee3b5] hover:text-[#fa5d00] transition-colors" title="WhatsApp"><WhatsAppIcon className="w-3.5 h-3.5" /></a>
             </div>
             <a href="mailto:schoolfoundry@jiggabyte.co.zm"
-              className="flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl font-bold transition-all border border-white/10">
-              <Mail className="w-4 h-4 text-primary" />
+              className="flex items-center gap-2 px-6 py-3 bg-[#fff8f1] hover:bg-[#fee3b5] text-[#1d1e1c] rounded-2xl font-bold transition-all border border-[#c0bbb6] shadow-xs">
+              <Mail className="w-4 h-4 text-[#fa5d00]" />
               schoolfoundry@jiggabyte.co.zm
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 relative z-10">
-            <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/20" asChild>
+          <div className="flex flex-wrap justify-center gap-4 relative z-10">
+            <Button size="lg" className="rounded-2xl px-8 h-14 text-base font-semibold bg-[#fa5d00] hover:bg-[#e05300] text-white shadow-[rgba(0,0,0,0.2)_0px_1px_4px_0px]" asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold border-white/10 hover:bg-white/5" asChild>
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 h-14 text-base font-semibold border-[#c0bbb6] text-[#1d1e1c] hover:bg-[#fff8f1] hover:border-[#fa5d00] hover:text-[#fa5d00]" asChild>
               <Link href="/online">See the Online Cloud</Link>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold border-white/10 hover:bg-white/5" asChild>
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 h-14 text-base font-semibold border-[#c0bbb6] text-[#1d1e1c] hover:bg-[#fff8f1] hover:border-[#fa5d00] hover:text-[#fa5d00]" asChild>
               <Link href="/offline">Explore Offline Bundle</Link>
             </Button>
           </div>
         </motion.div>
 
-        <p className="text-center mt-12 text-[10px] uppercase tracking-[0.4em] font-black text-white/20">
+        <p className="text-center mt-12 text-[11px] uppercase tracking-[0.2em] font-bold text-[#8e8b87]">
           Source:{' '}
-          <a href="https://www.edu.gov.zm/wp-content/uploads/2026/03/2025-ESB-.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline underline-offset-4">
+          <a href="https://www.edu.gov.zm/wp-content/uploads/2026/03/2025-ESB-.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-[#fa5d00] transition-colors underline underline-offset-4">
             Ministry of Education — Education Statistics Bulletin 2025
           </a>
         </p>

@@ -84,10 +84,10 @@ export default function SphereCanvas() {
         const size = Math.max(0.5, scale * 2.2);
         const alpha = 0.15 + depth * 0.75;
 
-        // Front dots: vivid orange; back dots: dim gray
-        const r = Math.round(249 * depth + 60 * (1 - depth));
-        const g = Math.round(115 * depth + 60 * (1 - depth));
-        const b = Math.round(22 * depth + 80 * (1 - depth));
+        // Front dots: vivid orange (#ea580c); back dots: soft amber/slate (#cbd5e1)
+        const r = Math.round(234 * depth + 203 * (1 - depth));
+        const g = Math.round(88 * depth + 213 * (1 - depth));
+        const b = Math.round(12 * depth + 225 * (1 - depth));
 
         ctx.beginPath();
         ctx.arc(sx, sy, size, 0, Math.PI * 2);
