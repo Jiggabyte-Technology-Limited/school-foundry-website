@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="font-bold text-2xl tracking-tight text-white">School<span className="font-light text-primary group-hover:text-primary/80 transition-colors">Foundry</span></span>
             </Link>
             <p className="text-white/40 leading-relaxed mb-8 text-base">
-              Helping schools ditch the paperwork and run smoother. Built right here in Zambia, for schools that actually need tools that work.
+              Open digital public infrastructure for educational equity and child safeguarding in Africa. Built in Lusaka, Zambia for schools across the continent.
             </p>
             <div className="flex flex-col gap-5 text-sm font-medium">
               <a href="mailto:schoolfoundry@jiggabyte.co.zm" className="flex items-center gap-3 hover:text-primary transition-colors duration-300 outline-none focus-visible:text-primary">
@@ -64,19 +64,19 @@ export default function Footer() {
                 <div className="p-2 rounded-lg bg-white/5">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
                 </div>
-                Lusaka, Zambia
+                Lusaka, Zambia · Digital Public Good
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-8">Platform</h4>
+            <h4 className="text-white font-bold text-xs uppercase tracking-[0.2em] mb-8">Platform & Mission</h4>
             <div className="flex flex-col gap-4 text-[13px] font-semibold">
               {[
-                { label: 'Offline Bundle', href: '/offline' },
-                { label: 'Cloud Version', href: '/online' },
-                { label: 'About Us', href: '/about' },
-                { label: 'Work With Us', href: '/work-with-us' },
+                { label: 'Our Mission (DPG)', href: '/about' },
+                { label: 'Offline Core (Free)', href: '/offline' },
+                { label: 'Cloud Portal', href: '/online' },
+                { label: 'Partner With Us', href: '/work-with-us' },
                 { label: 'Contact Us', href: '/contact' },
               ].map(({ label, href }) => (
                 <Link key={label} href={href} className="hover:text-primary transition-all duration-300 flex items-center gap-2 group outline-none focus-visible:text-primary">

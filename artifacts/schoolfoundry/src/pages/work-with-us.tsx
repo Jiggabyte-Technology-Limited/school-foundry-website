@@ -307,26 +307,6 @@ export default function WorkWithUsPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary/5 to-orange-500/5">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="mb-12 text-center max-w-2xl mx-auto">
-            <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">Join Our Network</p>
-            <h3 className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 tracking-tight">
-              Are You an <span className="text-primary">Entrepreneur?</span>
-            </h3>
-            <p className="text-[15px] text-white/50 leading-[1.65] mb-8">
-              Become a School Foundry agent and build passive income in your region. Earn $100 per sale, plus recurring monthly commissions as schools transition to the Cloud Version.
-            </p>
-            <a
-              href="/agents"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-2xl font-bold hover:bg-primary/90 transition-all shadow-[0_20px_40px_-12px_rgba(249,115,22,0.4)]"
-            >
-              Apply to Become an Agent
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
 
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">

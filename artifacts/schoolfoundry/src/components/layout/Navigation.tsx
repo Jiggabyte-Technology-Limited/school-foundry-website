@@ -6,17 +6,16 @@ import { asset } from '@/lib/asset';
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Offline Bundle', href: '/offline' },
-  { label: 'Cloud Version', href: '/online' },
-  { label: 'Work With Us', href: '/work-with-us' },
-  { label: 'Become an Agent', href: '/agents' },
+  { label: 'Our Mission', href: '/about' },
+  { label: 'Offline App', href: '/offline' },
+  { label: 'Cloud Portal', href: '/online' },
+  { label: 'Partner With Us', href: '/work-with-us' },
   { label: 'Contact', href: '/contact' },
 ];
 
 const MORE_LINKS = [
   { label: 'Zambia Campaign', href: '/campaigns/zambia', flag: '🇿🇲' },
   { label: 'Zimbabwe Campaign', href: '/campaigns/zimbabwe', flag: '🇿🇼' },
-  { label: 'Mission & DPG', href: '/about', flag: '🛡️' },
 ];
 
 export default function Navigation() {
@@ -108,10 +107,10 @@ export default function Navigation() {
           </div>
 
           <Link
-            href="/#contact"
+            href="/work-with-us"
             className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-all shadow-[0_8px_20px_-6px_rgba(249,115,22,0.4)] hover:shadow-[0_12px_25px_-4px_rgba(249,115,22,0.6)] hover:-translate-y-0.5 active:translate-y-0 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-[#07090E]"
           >
-            Request Demo
+            Partner With Us
           </Link>
         </div>
 
