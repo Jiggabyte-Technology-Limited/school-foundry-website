@@ -45,10 +45,14 @@ export default function Navigation() {
       <nav
         role="navigation"
         aria-label="Main Navigation"
-        className={`pointer-events-auto w-full max-w-[1160px] bg-white border border-[#c0bbb6]/40 rounded-full px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-300 ${
-          scrolled
+        className={`pointer-events-auto w-full max-w-[1160px] bg-white border border-[#c0bbb6]/40 px-4 sm:px-6 py-2 sm:py-2.5 transition-all duration-300 ${
+          menuOpen ? 'rounded-[28px] shadow-[0_16px_48px_rgba(0,0,0,0.14)] border-[#c0bbb6]/60' : 'rounded-full'
+        } ${
+          scrolled && !menuOpen
             ? 'shadow-[0_12px_36px_rgba(0,0,0,0.1)] border-[#c0bbb6]/60'
-            : 'shadow-[0_6px_24px_rgba(0,0,0,0.06)]'
+            : !menuOpen
+            ? 'shadow-[0_6px_24px_rgba(0,0,0,0.06)]'
+            : ''
         }`}
       >
         <div className="flex items-center justify-between w-full">
