@@ -13,6 +13,7 @@ import {
   ExternalLink,
   Mail,
   Phone,
+  ShieldCheck,
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { Button } from '@/components/ui/button';
@@ -56,8 +57,7 @@ export default function ZambiaCampaignPage() {
               Zambian Schools.
             </h1>
             <p className="text-xl text-white/50 max-w-xl font-medium leading-relaxed mb-10">
-              The latest Ministry of Education Bulletin confirms a massive shift: Zambia's classrooms are ready.
-              We provide the software that powers this digital progress.
+              Under Zambia's Free Education Policy and expanded CDF bursaries, classroom enrollments have surged. School Foundry delivers the 100% offline infrastructure to safeguard sponsored learners and manage school finances with zero internet dependency.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/20" asChild>
@@ -85,7 +85,7 @@ export default function ZambiaCampaignPage() {
 
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {[
             {
               label: 'Total Schools',
@@ -93,7 +93,7 @@ export default function ZambiaCampaignPage() {
               sub: 'Primary & Secondary',
               icon: Map,
               color: 'text-primary',
-              desc: 'A massive network of 11,728 Primary and 2,259 Secondary schools nationwide.'
+              desc: 'A network of 11,728 Primary and 2,259 Secondary schools nationwide.'
             },
             {
               label: 'Digital Devices',
@@ -101,15 +101,23 @@ export default function ZambiaCampaignPage() {
               sub: 'Computers & Tablets',
               icon: Monitor,
               color: 'text-primary',
-              desc: 'Over 35,000 desktops and 11,000 laptops are already in Zambian school offices.'
+              desc: 'Over 35,000 desktops and 11,000 laptops in school offices.'
+            },
+            {
+              label: 'Child Safeguarding',
+              value: '100%',
+              sub: 'CDF & Bursary Shield',
+              icon: ShieldCheck,
+              color: 'text-emerald-400',
+              desc: 'Guaranteed protection for sponsored learners from fee lockouts and exam exclusion.'
             },
             {
               label: 'Powered Schools',
               value: '9,160+',
-              sub: 'Grid, Solar & Generator',
+              sub: 'Grid, Solar & Gen',
               icon: Zap,
               color: 'text-primary',
-              desc: 'Thousands of schools have the infrastructure to support modern management tools.'
+              desc: 'Ready for 100% offline standalone desktop accounting.'
             }
           ].map((stat, i) => (
             <motion.div
@@ -118,16 +126,16 @@ export default function ZambiaCampaignPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden"
+              className="bg-white/[0.02] border border-white/5 rounded-[2rem] p-8 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors" />
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <stat.icon className={`w-7 h-7 ${stat.color}`} />
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <stat.icon className={`w-6 h-6 ${stat.color}`} />
               </div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-black text-white/30 mb-2">{stat.label}</p>
-              <h3 className="text-5xl font-black text-white mb-2 tracking-tighter">{stat.value}</h3>
-              <p className={`${stat.color} font-bold text-sm mb-6`}>{stat.sub}</p>
-              <p className="text-white/40 text-sm leading-relaxed font-medium">{stat.desc}</p>
+              <h3 className="text-4xl font-black text-white mb-2 tracking-tighter">{stat.value}</h3>
+              <p className={`${stat.color} font-bold text-sm mb-4`}>{stat.sub}</p>
+              <p className="text-white/40 text-xs leading-relaxed font-medium">{stat.desc}</p>
             </motion.div>
           ))}
         </div>

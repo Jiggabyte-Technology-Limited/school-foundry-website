@@ -59,7 +59,7 @@ export default function OfflinePage() {
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-4 mb-3">
                 <a
-                  href="https://github.com/sewardrichard/school-foundry-offline/releases/latest"
+                  href="https://github.com/Jiggabyte-Technology-Limited/school-foundry/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-8 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-bold text-base transition-all shadow-[0_20px_40px_-12px_rgba(16,185,129,0.4)] text-center flex items-center justify-center gap-2.5"

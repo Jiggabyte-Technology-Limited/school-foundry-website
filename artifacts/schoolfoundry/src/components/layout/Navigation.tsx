@@ -16,7 +16,7 @@ const NAV_LINKS = [
 const MORE_LINKS = [
   { label: 'Zambia Campaign', href: '/campaigns/zambia', flag: '🇿🇲' },
   { label: 'Zimbabwe Campaign', href: '/campaigns/zimbabwe', flag: '🇿🇼' },
-  { label: 'About Us', href: '/about', flag: 'ℹ️' },
+  { label: 'Mission & DPG', href: '/about', flag: '🛡️' },
 ];
 
 export default function Navigation() {

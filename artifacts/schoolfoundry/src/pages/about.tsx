@@ -12,6 +12,8 @@ import {
   Users,
   Receipt,
   School,
+  ShieldCheck,
+  CheckCircle2,
 } from 'lucide-react';
 import { asset } from '@/lib/asset';
 
@@ -57,41 +59,44 @@ function AnimatedCounter({ end, suffix = '', prefix = '' }: { end: number; suffi
 }
 
 const IMPACT_STATS = [
-  { end: 2, suffix: 's', label: 'Receipt print time', icon: Zap },
-  { end: 0, prefix: '$', suffix: '', label: 'Internet required', icon: Globe },
-  { end: 500, prefix: '$', suffix: '', label: 'Full deployment cost', icon: School },
-  { end: 0, suffix: '', label: 'Monthly fees', icon: Receipt },
+  { end: 100, suffix: '%', label: 'Offline Resilience (Zero WiFi)', icon: Globe },
+  { end: 0, suffix: ' Days', label: 'Exclusion for Sponsored Children', icon: ShieldCheck },
+  { end: 2, suffix: 's', label: 'Tamper-Evident Receipt Time', icon: Zap },
+  { end: 100, suffix: '%', label: 'Open Source Digital Public Good', icon: School },
 ];
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#07090E] selection:bg-primary/30 selection:text-white overflow-x-hidden">
 
+      {/* Hero Section */}
       <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 overflow-hidden">
         <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(249,115,22,0.08),transparent_70%)] pointer-events-none blur-3xl" />
         <div className="absolute left-[-5%] top-[20%] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(249,115,22,0.05),transparent_70%)] pointer-events-none blur-3xl" />
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div initial="hidden" animate="visible" variants={STAGGER} className="text-center max-w-3xl mx-auto">
-            <motion.span variants={FADE_UP} className="text-primary font-mono text-[10px] font-bold uppercase tracking-[0.3em] mb-6 block">About SchoolFoundry</motion.span>
+            <motion.span variants={FADE_UP} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-6">
+              <ShieldCheck className="w-3.5 h-3.5" /> Digital Public Good • SDG 4 & SDG 10 • UNICEF Aligned
+            </motion.span>
             <motion.h1 variants={FADE_UP} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-              Supporting schools<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">across Southern Africa.</span>
+              Digital Public Infrastructure for <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-400 to-orange-500">Every African School.</span>
             </motion.h1>
-            <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 font-medium leading-relaxed">
-              We build school management tools that work in the real world - with unreliable internet, limited budgets, and the tools schools already use every day.
+            <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/60 font-medium leading-relaxed">
+              We build open-source, offline-first educational infrastructure designed to protect vulnerable children from academic exclusion, eliminate cash disputes, and give schools sovereign financial records that survive power cuts and internet blackouts.
             </motion.p>
 
             <motion.div variants={FADE_UP} className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
               {[
-                { icon: School, label: 'Schools served', value: 'Growing' },
-                { icon: Globe, label: 'Countries', value: '2' },
-                { icon: Users, label: 'Zero internet needed', value: '100%' },
-                { icon: Heart, label: 'Community built', value: 'Always' },
+                { icon: School, label: 'SDG 4 (Quality Education)', value: 'Aligned' },
+                { icon: Shield, label: 'SDG 10 (Reduced Inequalities)', value: 'Active' },
+                { icon: Users, label: 'Offline Resilience', value: '100%' },
+                { icon: Heart, label: 'Digital Public Good (MIT)', value: 'Free Core' },
               ].map(({ icon: Icon, label, value }, idx) => (
-                <div key={idx} className="text-center">
+                <div key={idx} className="text-center bg-white/[0.02] border border-white/5 rounded-2xl p-4">
                   <Icon className="w-5 h-5 text-primary mx-auto mb-2" />
                   <p className="text-lg font-black text-white">{value}</p>
-                  <p className="text-[11px] text-white/30 font-medium">{label}</p>
+                  <p className="text-[11px] text-white/40 font-medium">{label}</p>
                 </div>
               ))}
             </motion.div>
@@ -99,6 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Vision & Mission */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
@@ -125,8 +131,8 @@ export default function AboutPage() {
                 <Target className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[17px] text-white mb-3">Our Vision</p>
-              <p className="text-[15px] text-white/50 leading-[1.7]">
-                Every school in Southern Africa - from capital cities to rural villages - deserves clear, reliable systems. No paper ledgers, no lost records, no guesswork.
+              <p className="text-[15px] text-white/60 leading-[1.7]">
+                An Africa where <strong className="text-white">no child is ever locked out of class or barred from exams</strong> due to administrative delays in government grants, CDF bursaries, or lost paperwork. Every school—from Lusaka to rural districts—deserves sovereign, transparent systems.
               </p>
             </motion.div>
 
@@ -139,8 +145,8 @@ export default function AboutPage() {
                 <Heart className="w-[18px] h-[18px] text-primary" />
               </div>
               <p className="font-bold text-[17px] text-white mb-3">Our Mission</p>
-              <p className="text-[15px] text-white/50 leading-[1.7]">
-                Build affordable school management technology that any school can adopt - regardless of budget, internet access, or staff training. We deliver tools that simplify fees, student records, and parent communication using the platforms and payment methods communities already trust: WhatsApp, EcoCash, Momo, and M-Pesa.
+              <p className="text-[15px] text-white/60 leading-[1.7]">
+                Provide free, open-source, offline-first digital public infrastructure that simplifies school accounting, shields vulnerable learners, and generates instant proof of payment. We bridge grassroots school realities with regional mobile money (Airtel, MTN, EcoCash, M-Pesa) and national grant disbursement tracking.
               </p>
             </motion.div>
 
@@ -148,6 +154,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Impact Counters */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
@@ -166,13 +173,14 @@ export default function AboutPage() {
                 <p className="text-3xl sm:text-4xl font-black text-white mb-2 tracking-tight">
                   <AnimatedCounter end={end} suffix={suffix} prefix={prefix || ''} />
                 </p>
-                <p className="text-[12px] sm:text-[13px] text-white/40 font-medium leading-snug">{label}</p>
+                <p className="text-[12px] sm:text-[13px] text-white/50 font-medium leading-snug">{label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Origin Story */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
@@ -215,13 +223,13 @@ export default function AboutPage() {
                 It started with a simple visit. One of our founders walked into a primary school on the outskirts of Lusaka to help set up their accounting. What they found was a bursar hunched over a stack of handwritten receipt books, cross-referencing fees against a paper register while parents queued outside in the heat.
               </motion.p>
               <motion.p variants={FADE_UP} className="text-[15px] text-white/60 leading-[1.8] mb-5">
-                The school had a computer. It even had a printer. But there was no internet, and every software solution they'd tried required a constant connection. The bursar had given up and gone back to paper.
+                The school had a computer. It even had a printer. But there was no internet, and every software solution they'd tried required a constant connection. In the confusion, students whose Constituency Development Fund (CDF) grants were delayed were being mistakenly sent home.
               </motion.p>
               <motion.p variants={FADE_UP} className="text-[15px] text-white/60 leading-[1.8] mb-5">
-                That afternoon, the idea for SchoolFoundry was born: <strong className="text-white/80">a system that works with zero internet, prints real receipts, and is simple enough for anyone to use on day one.</strong>
+                That afternoon, the mission for SchoolFoundry was born: <strong className="text-white">a 100% offline system that shields sponsored learners, prints real receipts in 2 seconds, and is simple enough for anyone to use on day one.</strong>
               </motion.p>
               <motion.p variants={FADE_UP} className="text-[15px] text-white/60 leading-[1.8]">
-                We built the first version with real school feedback and have kept improving it from those conversations. Every feature comes from bursars, principals, and parents.
+                We built SchoolFoundry as an open-source Digital Public Good under the MIT License, ensuring every African school has free, sovereign access to modern financial tools.
               </motion.p>
             </motion.div>
 
@@ -229,6 +237,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Impact Grid */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
@@ -240,10 +249,10 @@ export default function AboutPage() {
           >
             <motion.p variants={FADE_UP} className="text-[11px] font-medium tracking-[0.18em] uppercase text-primary mb-3">Our impact</motion.p>
             <motion.h3 variants={FADE_UP} className="text-[32px] sm:text-[38px] font-black text-white leading-[1.1] mb-4 max-w-[520px] tracking-tight">
-              Empowering communities through <span className="text-primary">better education infrastructure.</span>
+              Empowering communities through <span className="text-primary">educational equity.</span>
             </motion.h3>
             <motion.p variants={FADE_UP} className="text-[15px] text-white/50 max-w-[520px] leading-[1.65]">
-              When a school runs well, the whole community benefits. Parents trust where their money goes. Teachers spend less time on admin. Students get the attention they deserve.
+              When a school runs with transparent digital records, the whole community thrives. Subsidized learners stay in class, parents trust fee transactions, and teachers focus on teaching.
             </motion.p>
           </motion.div>
 
@@ -256,12 +265,12 @@ export default function AboutPage() {
           >
 
             <motion.div variants={CARD_FADE} className="sm:col-span-2 bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default group">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Shield className="w-[18px] h-[18px] text-primary" />
+              <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <ShieldCheck className="w-[18px] h-[18px] text-emerald-400" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Financial Transparency</p>
+              <p className="font-bold text-[15px] text-white mb-1">Child Safeguarding & Anti-Exclusion</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Every payment is recorded, every receipt is printed, and every balance is accurate. Parents can see exactly where their school fees go, which builds trust between schools and communities.
+                Learners on government bursaries (CDF, Free Education Policy), NGO sponsorships (CAMFED, UNICEF), or school scholarships are automatically protected. The system ensures no subsidized child is placed on fee lockout lists or excluded from exams.
               </p>
             </motion.div>
 
@@ -269,19 +278,19 @@ export default function AboutPage() {
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Globe className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Accessible Technology</p>
+              <p className="font-bold text-[15px] text-white mb-1">100% Offline Sovereignty</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Our system runs on any office computer. The offline version works without internet. The cloud version works on phones and tablets.
+                No internet required. Embedded SQLite database file stored securely on the school's office computer. Completely immune to cloud downtime and network blackouts.
               </p>
             </motion.div>
 
             <motion.div variants={CARD_FADE} className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default group">
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <MessageSquare className="w-[18px] h-[18px] text-primary" />
+                <Receipt className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Built on the Ground</p>
+              <p className="font-bold text-[15px] text-white mb-1">Financial Transparency</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Every feature in SchoolFoundry comes from real conversations with bursars, principals, teachers, and parents in the region. We listen first, then build.
+                Every cash payment, mobile money transfer, and bank slip generates an instant 2-second thermal receipt. Eliminates fee disputes and ensures parents have official proof.
               </p>
             </motion.div>
 
@@ -289,9 +298,9 @@ export default function AboutPage() {
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Designed for the Region</p>
+              <p className="font-bold text-[15px] text-white mb-1">Designed for African Reality</p>
               <p className="text-[13px] text-white/50 leading-[1.6]">
-                Multi-currency support, local payment methods, WhatsApp communication, and simple steps that match how Southern African schools actually work.
+                Built with multi-currency support (ZMW Kwacha, USD, ZWG), term rollover automation, Excel bulk imports, and 1-click Friday USB disaster recovery backups.
               </p>
             </motion.div>
 
@@ -299,6 +308,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Partner Callout */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
@@ -314,18 +324,18 @@ export default function AboutPage() {
                 <img src={asset("/logo.svg")} alt="" className="h-10 w-auto" />
                 <span className="text-xl font-black text-white tracking-tighter">School<span className="font-light text-primary">Foundry</span></span>
               </div>
-              <p className="text-[15px] text-white/50 leading-[1.7] mb-6">
-                We partner with donors, sponsors, NGOs, governments, and investors who want to improve school administration across Southern Africa.
+              <p className="text-[15px] text-white/60 leading-[1.7] mb-6">
+                We partner with educational donors, CDF committees, NGOs (CAMFED, UNICEF), governments, and social investors to deploy digital public infrastructure across 100,000+ African schools.
               </p>
-              <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/30">
-                Lusaka, Zambia · Built for Southern Africa
+              <p className="text-[11px] font-medium tracking-[0.18em] uppercase text-white/40">
+                Lusaka, Zambia · Digital Public Good
               </p>
             </div>
 
             <div className="bg-[#0B0D13] p-7 sm:p-10 flex flex-col items-center justify-center text-center">
-              <p className="font-bold text-[17px] text-white mb-3">Interested in partnering?</p>
+              <p className="font-bold text-[17px] text-white mb-3">Partner with our mission</p>
               <p className="text-[13px] text-white/50 mb-8 max-w-sm leading-relaxed">
-                Learn how donors, NGOs, governments, and investors are helping us bring digital school management to every community.
+                Learn how sponsors and education agencies fund deployment bundles and safeguard thousands of vulnerable learners.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
                 <a

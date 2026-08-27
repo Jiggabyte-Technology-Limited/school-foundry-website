@@ -13,6 +13,7 @@ import {
   Users,
   ExternalLink,
   FileText,
+  ShieldCheck,
 } from 'lucide-react';
 import WhatsAppIcon from '@/components/ui/WhatsAppIcon';
 import { Button } from '@/components/ui/button';
@@ -50,7 +51,7 @@ export default function ZimbabweCampaignPage() {
               Zimbabwean Schools.
             </h1>
             <p className="text-xl text-white/50 max-w-xl font-medium leading-relaxed mb-10">
-              Zimbabwe's education network is expanding fast. From Harare to Manicaland, schools are modernizing how they manage fees, records, and parent communication.
+              Managing multi-currency fees (USD & ZWG) and BEAM bursary allocations with paper books creates administrative overload. School Foundry delivers 100% offline software to shield subsidized learners and balance accounts with total clarity.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="rounded-2xl px-10 h-16 text-lg font-bold shadow-2xl shadow-primary/20" asChild>
@@ -78,7 +79,7 @@ export default function ZimbabweCampaignPage() {
 
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {[
             {
               label: 'Total Schools',
@@ -86,15 +87,23 @@ export default function ZimbabweCampaignPage() {
               sub: 'Primary & Secondary',
               icon: School,
               color: 'text-[#FCD116]',
-              desc: 'Over 8,000 primary and 3,357 secondary schools across 10 provinces serving millions of learners.'
+              desc: 'Over 8,000 primary and 3,357 secondary schools across 10 provinces.'
             },
             {
-              label: 'New Schools Built',
-              value: '2,873',
-              sub: 'Since 2020',
+              label: 'BEAM Safeguarding',
+              value: '100%',
+              sub: 'Bursary Shield Active',
+              icon: ShieldCheck,
+              color: 'text-emerald-400',
+              desc: 'Sponsored learners are shielded from fee lockouts and never excluded from exams.'
+            },
+            {
+              label: 'Multi-Currency',
+              value: 'USD & ZWG',
+              sub: 'Dual Ledger Support',
               icon: TrendingUp,
               color: 'text-primary',
-              desc: 'Massive infrastructure investment — nearly 3,000 new schools constructed between 2020 and 2024.'
+              desc: 'Automatic currency isolation and conversion for transparent collections.'
             },
             {
               label: 'Rural Schools',
@@ -102,7 +111,7 @@ export default function ZimbabweCampaignPage() {
               sub: 'Of Primary Schools',
               icon: Map,
               color: 'text-[#006633]',
-              desc: 'The majority of primary learners attend rural schools — perfect for our Offline Bundle solution.'
+              desc: 'The offline bundle delivers zero-downtime operations without needing WiFi.'
             }
           ].map((stat, i) => (
             <motion.div
@@ -111,16 +120,16 @@ export default function ZimbabweCampaignPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden"
+              className="bg-white/[0.02] border border-white/5 rounded-[2rem] p-8 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors" />
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <stat.icon className={`w-7 h-7 ${stat.color}`} />
+              <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <stat.icon className={`w-6 h-6 ${stat.color}`} />
               </div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-black text-white/30 mb-2">{stat.label}</p>
-              <h3 className="text-5xl font-black text-white mb-2 tracking-tighter">{stat.value}</h3>
-              <p className={`${stat.color} font-bold text-sm mb-6`}>{stat.sub}</p>
-              <p className="text-white/40 text-sm leading-relaxed font-medium">{stat.desc}</p>
+              <h3 className="text-4xl font-black text-white mb-2 tracking-tighter">{stat.value}</h3>
+              <p className={`${stat.color} font-bold text-sm mb-4`}>{stat.sub}</p>
+              <p className="text-white/40 text-xs leading-relaxed font-medium">{stat.desc}</p>
             </motion.div>
           ))}
         </div>
