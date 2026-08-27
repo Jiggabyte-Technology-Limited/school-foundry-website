@@ -5,6 +5,7 @@ import {
   HardDrive,
   Zap,
   Shield,
+  ShieldCheck,
   WifiOff,
   Users,
   CreditCard,
@@ -17,6 +18,7 @@ import {
   Package,
   Receipt,
   Monitor,
+  Download,
 } from 'lucide-react';
 import { asset } from '@/lib/asset';
 
@@ -52,23 +54,34 @@ export default function OfflinePage() {
               </motion.h1>
 
               <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 mb-10 max-w-xl leading-relaxed font-medium">
-                Built for schools that need a dependable system on the office computer. SchoolFoundry Offline keeps working when the internet is unavailable, so your team can record fees, print receipts, and manage student records without interruption.
+                Built for schools that need a dependable system on the office computer. SchoolFoundry Offline keeps working when the internet is unavailable, so your team can record fees, protect scholarship students from exclusion, and print receipts without interruption.
               </motion.p>
 
-              <motion.div variants={FADE_UP} className="flex flex-wrap gap-4">
+              <motion.div variants={FADE_UP} className="flex flex-wrap gap-4 mb-3">
+                <a
+                  href="https://github.com/sewardrichard/school-foundry-offline/releases/latest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl font-bold text-base transition-all shadow-[0_20px_40px_-12px_rgba(16,185,129,0.4)] text-center flex items-center justify-center gap-2.5"
+                >
+                  <Download className="w-5 h-5" /> Download Free (.exe)
+                </a>
                 <a
                   href="/#contact"
-                  className="px-10 py-5 bg-primary text-white rounded-2xl font-bold text-lg hover:bg-primary/90 transition-all shadow-[0_20px_40px_-12px_rgba(249,115,22,0.4)] text-center"
+                  className="px-8 py-5 bg-primary text-white rounded-2xl font-bold text-base hover:bg-primary/90 transition-all shadow-[0_20px_40px_-12px_rgba(249,115,22,0.4)] text-center"
                 >
-                  Get a Quote
+                  Get Hardware Bundle
                 </a>
                 <a
                   href="#whats-included"
-                  className="px-10 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold text-lg border border-white/10 transition-all text-center backdrop-blur-md"
+                  className="px-8 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold text-base border border-white/10 transition-all text-center backdrop-blur-md"
                 >
                   See What's Included
                 </a>
               </motion.div>
+              <motion.p variants={FADE_UP} className="text-xs text-white/40 font-mono mb-8">
+                Windows 10 / 11 (64-bit) • 100% Free & Open Source Core (MIT) • Works Completely Offline
+              </motion.p>
             </motion.div>
 
             <motion.div
@@ -192,6 +205,18 @@ export default function OfflinePage() {
                 </div>
                 <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
                 <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child. Track finances, print statements, manage fees and more.</p>
+              </div>
+            </div>
+
+            <div className="bg-[#0B0D13] group cursor-default">
+              <div className="p-7 group-hover:bg-white/[0.03] transition-colors">
+                <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <ShieldCheck className="w-[18px] h-[18px] text-emerald-500" />
+                </div>
+                <p className="font-bold text-[15px] text-white mb-1">Child Safeguarding (SDG 4 & 10)</p>
+                <p className="text-[13px] text-white/50 leading-[1.6]">
+                  Track students on CDF bursaries, government grants, CAMFED, and UNICEF scholarships. Subsidized learners are protected from fee lockouts and never excluded from classes.
+                </p>
               </div>
             </div>
 

@@ -122,8 +122,8 @@ export default function Home() {
 
             <motion.div initial="hidden" animate="visible" variants={STAGGER} className="flex flex-col justify-center">
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary mb-8 font-mono text-[10px] sm:text-xs uppercase tracking-widest w-fit">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping flex-shrink-0" />
-                <span>OFFLINE VERSION AVAILABLE NOW</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping flex-shrink-0" />
+                <span>DIGITAL PUBLIC GOOD • FREE OFFLINE APP AVAILABLE</span>
               </motion.div>
 
               <motion.h1 variants={FADE_UP} className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black tracking-tight text-white mb-6 leading-[0.95]">
@@ -134,7 +134,7 @@ export default function Home() {
               </motion.h1>
 
               <motion.p variants={FADE_UP} className="text-lg sm:text-xl text-white/50 mb-10 max-w-xl leading-relaxed font-medium">
-                SchoolFoundry helps you manage fees, receipts, and student records on your office computer, even when the internet is unreliable.
+                SchoolFoundry helps you manage fees, protect scholarship and bursary students from exclusion, and print receipts on your office computer—even when the internet is unavailable.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-4 mb-14">
@@ -225,8 +225,8 @@ export default function Home() {
               <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="w-[18px] h-[18px] text-primary" />
               </div>
-              <p className="font-bold text-[15px] text-white mb-1">Student Tracking</p>
-              <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child so you can track balances, issue statements, and keep student records organized without paper files.</p>
+              <p className="font-bold text-[15px] text-white mb-1">Student Tracking & Child Safeguarding</p>
+              <p className="text-[13px] text-white/50 leading-[1.6]">A digital identity for every child so you can track balances, protect scholarship and bursary students from exclusion, issue statements, and keep student records organized without paper files.</p>
             </div>
 
             <div className="bg-[#07090E] hover:bg-white/[0.03] transition-colors p-7 cursor-default">

@@ -105,10 +105,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/5 pt-10 flex flex-col sm:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-widest font-bold text-white/20">
-          <p>&copy; {new Date().getFullYear()} SchoolFoundry. Forging the Future.</p>
+          <p>&copy; {new Date().getFullYear()} SchoolFoundry. Core Offline Edition is an Open Source Digital Public Good (MIT).</p>
           <p>
-            System by{' '}
-            <span className="text-primary/60 hover:text-primary transition-colors duration-300 cursor-default">Jiggabyte Technology Limited</span>
+            An Open Venture by{' '}
+            <span className="text-primary/60 hover:text-primary transition-colors duration-300 cursor-default">Jiggabyte Technology Limited & Banya Labs</span>
           </p>
         </div>
       </div>
